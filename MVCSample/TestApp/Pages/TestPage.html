@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>  
+    
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .dvList {
+            float: left;
+            width: 100%;
+        }
+
+        .dvListChanged {
+            float: left;
+            width: 50%;
+        }
+
+        .dvChildList {
+            border: 1px solid lightgray;
+            float: right;
+            margin-right: 5px;
+            width: 48%;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <div id="dvList" class="dvList" style=""></div>
+    <div id="dvChildList" class="dvChildList" style=""></div>
+
+    <!--<table><tr><th>Name</th><th>Mobile No</th><th>Email</th><th>DOB</th></tr></table>-->
+</body>
+</html>
+<script type="text/javascript">
+    var lst = [
+            { name: 'shgdfrtgh', mobileNo: '85828', email: 'aergfbsfndfxg@shbfgh', dob: '4616544', id: '1', },
+            { name: 'rtghdbfgn', mobileNo: '852852', email: 'aergfbsfndfxg@shbfgh', dob: '4616544', id: '2', },
+            { name: 'srdthnfgh', mobileNo: '58282', email: 'aergfbsfndfxg@shbfgh', dob: '4616544', id: '3', },
+            { name: 'rthbdrftghb', mobileNo: '5822', email: 'aergfbsfndfxg@shbfgh', dob: '4616544', id: '4', },
+            { name: 'wrgasrdthtbds', mobileNo: '582582', email: 'aergfbsfndfxg@shbfgh', dob: '4616544', id: '5', },
+            { name: 'wrgftghsrtghabds', mobileNo: '58258', email: 'aergfbsfndfxg@shbfgh', dob: '4616544', id: '6', },
+            { name: 'srthgtr', mobileNo: '55225252', email: 'aergfbsfndfxg@shbfgh', dob: '4616544', id: '7', },
+            { name: 'ftghrfrtgh', mobileNo: '525252', email: 'aergfbsfndfxg@shbfgh', dob: '4616544', id: '8', },
+            { name: 'srftgh', mobileNo: '5252', email: 'aergfbsfndfxg@shbfgh', dob: '4616544', id: '9', },
+            { name: 'rtgdhsrtg', mobileNo: '525252', email: 'aergfbsfndfxg@shbfgh', dob: '4616544', id: '10', },
+
+    ]
+    //var lstEmployee = [
+    //      { name: 'wrgabds', id: '1', },
+    //      { name: 'wrgabds', id: '2', },
+    //      { name: 'wrgabds', id: '3', },
+    //      { name: 'wrgabds', id: '4', },
+    //      { name: 'wrgabds', id: '5', },
+    //      { name: 'wrgabds', id: '6', },
+    //      { name: 'wrgabds', id: '7', },
+    //      { name: 'wrgabds', id: '8', },
+
+    //]
+    var lstEmployee = [
+            { name: 'shgdfrtgh', mobileNo: '87563258635863', email: 'SDGVSGVdsfz@shbfgh', dob: '4616547444', id: '1' },
+            { name: 'rtghdbfgn', mobileNo: '56336536.56.56', email: 'fgbdfgdfg@shbfgh', dob: '461654444', id: '2' },
+            { name: 'srdthnfgh', mobileNo: '57452727522572', email: 'sedgdeg@shbfgh', dob: '77777', id: '3' },
+            { name: 'rthbdrftghb', mobileNo: '752547252475257', email: 'sedgg@shbfgh', dob: '88888', id: '4' },
+            { name: 'wrgasrdthtbds', mobileNo: '475247525724752', email: 'sdegdefgsdfg@shbfgh', dob: '99999', id: '5' },
+            { name: 'wrgftghsrtghabds', mobileNo: '475245245527452', email: 'sdfgbhsghbdr@shbfgh', dob: '6666', id: '6' },
+            { name: 'srthgtr', mobileNo: '75424752547252574', email: 'srthsgdefg@shbfgh', dob: '111111', id: '7' },
+            { name: 'ftghrfrtgh', mobileNo: '65465145245254651561', email: 'edsagedgs@shbfgh', dob: '3232323', id: '8' },
+                { name: 'srftgh', mobileNo: '5252', email: 'aergfbsfndfxg@shbfgh', dob: '4616544', id: '9', },
+            { name: 'rtgdhsrtg', mobileNo: '525252', email: 'aergfbsfndfxg@shbfgh', dob: '4616544', id: '10', },
+
+    ]
+    var divElement = document.getElementById('dvList');
+    var text = '';
+    var tblStart = '<table class="table table-bordered table-hover" id="tblParent"><tr><th>Name</th><th>Mobile No</th><th>Email</th><th>DOB</th></tr>';
+    var innerText = '';
+    var tblEnd = '</table>';
+
+    for (var i = 0; i < lst.length; i++) {
+        text += '  <a id="btnShow " onclick="ShowChild(' + lst[i].id + ')">' + lst[i].name + '</a><br/>';
+        var row = '<tr><td>' + lst[i].name + '</td><td>' + lst[i].mobileNo + '</td><td>' + lst[i].email + '</td><td>' + lst[i].dob + '</td></tr>';
+        innerText += row;
+    }
+    divElement.innerHTML = tblStart + innerText + tblEnd;
+    function ShowChild(id) {
+        var divchildList = document.getElementById('dvChildList');
+        var text = '';
+        var table = '';
+
+        for (var i = 0; i < lstEmployee.length; i++) {
+
+            if (id == lstEmployee[i].id) {
+                //text += '  <span id="btnShow ">' + lstEmployee[i].mobileNo + '</span><br/>';
+                var row = '<table style="line-height: 30px; min-height: 400px;width: 400px;"><tr><td>Name   :</td><td>' + lstEmployee[i].name + '</td></tr>';
+                row += '<tr><td>Mobile No   :</td><td>' + lstEmployee[i].mobileNo + '</td></tr>';
+                row += '<tr><td>Email   :</td><td>' + lstEmployee[i].email + '</td></tr>';
+                row += '<tr><td>DOB   :</td><td>' + lstEmployee[i].dob + '</td></tr></table>';
+                divchildList.innerHTML = row;
+            }
+        }
+
+    }
+    function addRowHandlers() {
+        var rows = document.getElementById("tblParent").rows;
+        for (i = 0; i < rows.length; i++) {
+            
+            rows[i].onclick = function () {
+                return function () {
+                    var id = this.cells[0].innerHTML;
+                    divElement.className = "dvListChanged";
+
+                    var divchildList = document.getElementById('dvChildList');
+                    var text = '';
+                    var table = '';
+
+                    for (var i = 0; i < lstEmployee.length; i++) {
+                        var a = lstEmployee[i].name;
+                        if (id == lstEmployee[i].name) {
+
+                            //text += '  <span id="btnShow ">' + lstEmployee[i].mobileNo + '</span><br/>';
+                            var row = '<table style="line-height: 30px; min-height: 400px;width: 400px;"><tr><td>Name   :</td><td>' + lstEmployee[i].name + '</td></tr>';
+                            row += '<tr><td>Mobile No   :</td><td>' + lstEmployee[i].mobileNo + '</td></tr>';
+                            row += '<tr><td>Email   :</td><td>' + lstEmployee[i].email + '</td></tr>';
+                            row += '<tr><td>DOB   :</td><td>' + lstEmployee[i].dob + '</td></tr></table>';
+                            divchildList.innerHTML = row;
+                        }
+
+                    }
+                };
+            }(rows[i]);
+        }
+    }
+    window.onload = addRowHandlers();
+</script>

@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "jqEmpsList";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+@{
+   // string status = Request.QueryString["status"];
+   // int i = 0;
+}
+
+<div>
+    <div class="dvEmpLeft">
+        <h3>Employee List</h3>
+    </div><div class="dvEmpRight">
+        <input type="button" name="Add" value="Add" class="btn btn-success" onclick="location.href='@Url.Action("AddEmp", "Employee")'" />
+    </div>
+    <div style="clear:both"></div>
+    <script src="~/ListScripts/jqEmpList1.js"></script>
+    <table id="EmpList" style="width: 100%;"> </table>
+    <div style="width:100%;" id="pager"></div>
+</div>

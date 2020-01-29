@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "AddEmpDetails";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<style type="text/css">
+    .tdLblText {
+        height: 40px;
+    }
+</style>
+
+<form action="form1" id='form1'>
+
+    <div class="col-lg-12" data-bind="with:EmployeeDetails" id="dvEmployeeDetails">
+        <div>
+            <table>
+                <tr>
+                    <td class="tdLblText"> First Name</td>
+                    <td><input data-bind="value:FirstName" /></td>
+                </tr>
+                <tr>
+                    <td class="tdLblText">Last Name</td>
+                    <td><input data-bind="value:LastName" /></td>
+                </tr>
+                @*<tr>
+                    <td class="tdLblText">Gender</td>
+                    <td>
+                        <select id="ddlGender" class="form-control" data-bind="options: EmployeeDetails.LstGender, optionsText: 'Name', optionsValue: 'Id', value:EmployeeDetails.Id, optionsCaption: '--Select--'"></select>
+                    </td>
+                </tr>*@
+                <tr>
+                    <td class="tdLblText">Date of Birth</td>
+                    <td><input data-bind="value:DateofBirth" /></td>
+                </tr>
+                <tr>
+                    <td class="tdLblText">Address</td>
+                    <td><input data-bind="text:Address" /></td>
+                </tr>
+            </table>
+
+            <input id="btnSave" type="button" data-bind="click:Save" style="float: right; margin-right: 3px; margin-top: 1px" value="Save" class="btn btn-success btn-sm" />
+
+        </div>
+    </div>
+</form>
+@section Scripts {
+    @Scripts.Render("~/AppScripts/AddEmpDetails.js")
+}
+
+

@@ -1,0 +1,41 @@
+﻿@model MVCSample.Models.UILogin
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+<script src="~/LoginScripts/LoginScript.js"></script>
+
+<div style="float:right;top:0">
+    <a id="lnlLogin" class="lnkLogin">Login</a>
+</div>
+<div>
+
+    <div class="dvLogin">
+        <div class="dvLogtop">
+            <img src="~/Images/Login/Close.png" id="btnClose" class="btnClose" />
+            @*<input type="submit" value="Close" id="btnClose" class="btnClose" />*@
+        </div>
+        @using (@Html.BeginForm("Login1", "Login", FormMethod.Post))
+        {
+            <table id="tblLogin1" class="tblLogin" style="display:none">
+                <tr>
+                    <td class="tdLbl" style="color:dodgerblue">User Name</td>
+                    <td class="tdColon" style="color:dodgerblue">:</td>
+                    <td class="tdtxt">@Html.TextBoxFor(model => model.UserName, new { id = "txtUserName", @class = "txtUserName", style = "width: 200px;color:blue;height:28px " })</td>
+                </tr>
+                <tr>
+                    <td class="tdLbl" style="color:dodgerblue">Password</td>
+                    <td class="tdColon" style="color:dodgerblue">:</td>
+
+                    <td class="tdtxt">@Html.PasswordFor(model => model.Password, new { id = "txtPassword", @class = "txtPassword", style = "width: 200px;color:blue;height:28px " })</td>
+                </tr>
+                <tr>
+                    <td class="tdLbl"></td>
+                    <td class="tdColon"></td>
+                    <td class="tdtxt"><a id="lnlLogin" class="lnkForgot">Forgot Password</a><input type="submit" value="Login" onclick="return Validate()" id="btnLogin" class="btnLogin" /></td>
+                </tr>
+            </table>
+        }
+    </div>
+</div>

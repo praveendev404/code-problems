@@ -1,0 +1,90 @@
+﻿body {
+    background-color: #F0F0F0;
+}
+
+.dvLogin {
+    background-color: white;
+    border: 1px solid lightgray;
+    height: 275px;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-top: 135px;
+    border: 1px solid dodgerblue;
+    box-shadow: 0 0 15px gray;
+}
+
+.tblLogin {
+    margin-top: 45px;
+}
+
+.btnClose {
+    cursor:pointer;
+    background-color: #243769;
+    color: white;
+    float: right;
+    border-color: #243769;
+    height: 25px;
+}
+
+.btnLogin {
+    background-color: #243769;
+    border-color: #243769;
+    border-radius: 4px;
+    color: white;
+    float: right;
+    height: 27px;
+    width: 76px;
+}
+
+    .btnLogin:hover {
+        /*box-shadow: 10px 10px 5px #5a6d9f;*/
+        box-shadow: 0 0 15px gray;
+    }
+
+.dvLogtop {
+    background-color: #243769;
+    height: 25px;
+}
+
+.dvLogbottem {
+    background-color: #5072A7;
+}
+
+.tdLbl {
+    height: 50px;
+    padding-left: 50px;
+    font-size: 17px;
+}
+
+.tdColon {
+    padding-left: 60px;
+}
+
+.tdtxt {
+    padding-left: 50px;
+}
+
+.txtUserName {
+    border: 1px solid dodgerblue;
+    /*background-color:lightgray;*/
+}
+
+    .txtUserName:hover {
+        box-shadow: 0 0 5px dodgerblue;
+    }
+
+.txtPassword {
+    border: 1px solid dodgerblue;
+    /*background-color:lightgray;*/
+}
+
+    .txtPassword:hover {
+        box-shadow: 0 0 5px dodgerblue;
+    }
+
+a {
+}
+
+    a:hover {
+        cursor: pointer;
+    }

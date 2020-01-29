@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7093bda833b247c68100bb69d5f2887b" Name="Diagram1">
+        <EntityTypeShape EntityType="MvcDemoModel.Country" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDemoModel.EmpDetail" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDemoModel.Employee" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDemoModel.EmpQualification" Width="1.5" PointX="7.5" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDemoModel.Gender" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDemoModel.Menu" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDemoModel.ProfilePic" Width="1.5" PointX="7.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDemoModel.Qualification" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDemoModel.State" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDemoModel.tblEmployee" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDemoModel.Test" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="MvcDemoModel.FK_Employee_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDemoModel.FK_State_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDemoModel.FK_Employee_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDemoModel.FK_Employee_State" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDemoModel.FK_EmpQualification_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDemoModel.FK_ProfilePics_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDemoModel.FK_EmpQualification_EmpQualification" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

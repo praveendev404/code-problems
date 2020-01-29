@@ -1,0 +1,115 @@
+﻿@model MVCSample.Models.UIEmp
+
+
+
+@using (@Html.BeginForm("AddEmpWithImage", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div style="float:right">
+        <input type="submit" value="Save" class="btn btn-success" style="margin-top:0px" />
+    </div>
+    <script src="~/ListScripts/AddEmploye.js"></script>
+    <div class="form-horizontal">
+        <div>
+            <div style="clear:both"></div>
+        </div>
+        <div>
+            <table style="float:left;width:50%">    
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        First Name<em class="em">*</em>
+                    </td>
+                    <td class="txttd">
+                        @Html.EditorFor(model => model.FirstName)
+                        @Html.HiddenFor(model => model.EmployeeId)
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                    </td>
+                </tr>
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        Last Name<em class="em">*</em>
+                    </td>
+                    <td class="txttd">
+                        @Html.TextBoxFor(model => model.LastName)
+                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                    </td>
+                </tr>
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        Gender<em class="em">*</em>
+                    </td>
+                    <td class="txttd">
+                        @Html.DropDownListFor(model => model.Gender.GenderId, new SelectList(Model.lstGender as System.Collections.IEnumerable, "GenderId", "Name"), "--Select--")
+
+                        @Html.ValidationMessageFor(model => model.Gender.GenderId, "", new { @class = "text-danger" })
+                    </td>
+                </tr>
+
+
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        Address<em class="em">*</em>
+                    </td>
+                    <td class="txttd">
+                        @Html.TextAreaFor(model => model.Address)
+                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                    </td>
+                </tr>
+            </table>
+            <table style="float:right;width:50%">
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        Mobile No<em class="em">*</em>
+                    </td>
+                    <td class="txttd">
+                        @Html.EditorFor(model => model.MobileNo)
+                        @Html.ValidationMessageFor(model => model.MobileNo, "", new { @class = "text-danger" })
+                    </td>
+                </tr>
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        Email <em class="em">*</em>
+                    </td>
+                    <td class="txttd">
+                        @Html.EditorFor(model => model.EmailId)
+                        @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "text-danger" })
+                    </td>
+                </tr>
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        Country <em class="em">*</em>
+                    </td>
+                    <td class="txttd">
+                        @Html.DropDownListFor(model => model.Country.CountryId, new SelectList(Model.lstCountry as System.Collections.IEnumerable, "CountryId", "Name"), "--Select--", new { @class = "ddlCountry" })
+                        @Html.ValidationMessageFor(model => model.Country.CountryId, "", new { @class = "text-danger" })
+                    </td>
+                </tr>
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        State <em class="em">*</em>
+                    </td>
+                    <td class="txttd">
+                        @Html.DropDownListFor(model => model.State.StateId, new SelectList(Model.lstState as System.Collections.IEnumerable, "StateId", "Name"), "--Select--", new { id = "ddlState" })
+
+                        @Html.ValidationMessageFor(model => model.State.StateId, "", new { @class = "text-danger" })
+                    </td>
+                </tr>
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        ZipCode <em class="em">*</em>
+                    </td>
+                    <td class="txttd">
+                        @Html.EditorFor(model => model.ZipCode)
+                        @Html.ValidationMessageFor(model => model.ZipCode, "", new { @class = "text-danger" })
+                    </td>
+                </tr>
+                <tr class="lbltr">
+                    <td class="lbltd">Upload Photo</td>
+                    <td class="txttd">
+                        <input type="file" id="ProfilePic" name="ProfilePic" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        @Html.ValidationSummary(true)
+    </div>
+}

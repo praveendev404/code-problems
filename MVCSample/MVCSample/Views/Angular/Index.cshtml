@@ -1,0 +1,200 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AngularJsLayout.cshtml";
+}
+<form ng-app="myApp" name="myForm">
+
+    <div ng-controller="MyController">
+        <div style="float:left;width:49%">
+            @*<div ng-model="mainHeader">
+                    <h2>   {{mainHeader}}</h2>
+                </div>*@
+            <table>
+                <tr>
+                    <td>First name</td>
+                    <td> <input type="text" ng-model="firstName" /> </td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td> <input type="text" ng-model="lastName" /> </td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    @*  <td> {{firstName+" "+lastName}} </td>*@
+                    <td>{{fullName()}}</td>
+                </tr>
+            </table>
+            <div ng-init="myCol='gray'">
+                <input style="background-color:{{myCol}}" ng-model="myCol" value="{{myCol}}">
+            </div>
+            <div ng-init="person={fName:'Praveen',lName:'Kumar'}">
+                <p>The name is {{ person.fName }}</p>
+            </div>
+            <div ng-init="points=[1,15,19,2,40]">
+                <p>The third result is <span ng-bind="points[4]"></span></p>
+            </div>
+            <div style="clear:both"></div>
+            <div ng-init="myName='Praveen kumars'"></div>
+            {{myName}}
+            <div style="clear:both"></div>
+            <div ng-init="quantity=1;price=50">
+                Quantity:<input type="number" ng-model="quantity"><br />
+                Price:<input type="number" ng-model="price">
+                Total:{{quantity*price}}
+            </div>
+            <div style="clear:both"></div>
+            <table>
+                <tr>
+                    <td>
+                        <div ng-init="names=[
+                 {name:'praveen',country:'India'},
+                 {name:'kumar',country:'usa'},
+                 {name:'sgfdbn',country:'India'},
+                 {name:'wfg',country:'usa'},
+                 {name:'wfg',country:'usa'},
+                 {name:'ram',country:'uk'}
+             ]">
+                            <ul>
+                                <li ng-repeat="x in names | orderBy:'name'">
+                                    {{ x.name + ', ' + x.country }}
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div ng-init="courses=['C#','ASP','SQL','JQuery','Angularjs','knockoutjs']"></div>
+                        <ul>
+                            <li ng-repeat="c in courses">
+                                {{c}}
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div>
+                            <ul>
+                                <li ng-repeat="x in personnames">{{x}}</li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <ul>
+                            <li ng-repeat="o in lstDetails">
+                                {{ o.name + ', ' + o.country }}
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div style="float:right;width:49%">
+            <div style="clear:both"></div>
+            <div>
+                <table border="1">
+                    <tr>
+                        <th style="cursor:pointer;background-color:#243769;color:white" ng-click="orderbyMe('name')">Name</th>
+                        <th style="cursor:pointer;background-color:#243769;color:white" ng-click="orderbyMe('country')">Country</th>
+                    </tr>
+                    <tr ng-repeat="x in lstTable | orderBy:myorderBy">
+                        <td>{{x.name}}</td>
+                        <td>{{x.country}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                Courses   <select ng-model="m.courseId">
+                    <option ng-repeat="m in lstCourses" value="{{m.courseId}}">{{m.Name}}</option>
+                </select>
+                @*<select ng-model="x.courseId" ng-options="x.courseId for x in lstCourses"></select>*@
+
+                Selected course : {{m.courseId}}
+            </div>
+            @*<h1 ng-mousemove="count = count + 1">Mouse over me!</h1>
+                <h2>{{ count }}</h2>*@
+            <button ng-click="count = count + 1">Click me!</button>
+
+            <p>{{ count }}</p>
+            <button ng-click="myFunction()">Click me!</button>
+
+            <p>{{ count1 }}</p>
+        </div>
+    </div>
+
+    @*<div>
+            Email:
+            <input type="email" name="myAddress" ng-model="text">
+                <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+            <br />
+            Enter your name:
+            <input name="myAddress" ng-model="text" required>
+
+        </div>
+        <div>
+
+        </div>
+        <input type="submit" name="btnSave" value="Save" />*@
+</form>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('MyController', function ($scope) {
+        $scope.lstCourses = [
+            { courseId: 1, Name: 'C#' },
+            { courseId: 2, Name: 'ASP' },
+            { courseId: 3, Name: 'MVC' },
+            { courseId: 4, Name: 'JQuery' },
+            { courseId: 5, Name: 'Knockoutjs' },
+            { courseId: 6, Name: 'Angularjs' },
+            { courseId: 7, Name: 'D3js' },
+        ];
+
+        var courseId = $scope.courseId;
+        $scope.mainHeader = "My first demo";
+        $scope.lstTable = [
+    { name: 'Jani', country: 'Norway' },
+    { name: 'Carl', country: 'Sweden' },
+    { name: 'Margareth', country: 'England' },
+    { name: 'Hege', country: 'Norway' },
+    { name: 'Joe', country: 'Denmark' },
+    { name: 'Gustav', country: 'Sweden' },
+    { name: 'Birgit', country: 'Denmark' },
+    { name: 'Mary', country: 'England' },
+    { name: 'Kai', country: 'Norway' }
+        ];
+
+        $scope.orderbyMe = function (x) {
+            $scope.myorderBy = x;
+        }
+
+        $scope.lstDetails = [
+       { name: 'Jani', country: 'Norway' },
+       { name: 'Hege', country: 'Sweden' },
+       { name: 'Kai', country: 'Denmark' }
+        ];
+        $scope.firstName = "Praveen";
+        $scope.lastName = "Kumar";
+        $scope.fullName = function () {
+            return $scope.firstName + " " + $scope.lastName;
+        }
+        $scope.personnames = ["ASD", "Tobasdfias", "Liwsagdfhgfnus"];
+        var i = 1;
+
+
+        $scope.myFunction = function () {            
+            $scope.count1++;
+        }
+        $scope.count1 = 0;
+    });
+    //app.directive("testdirective", function () {
+    //    alert("what is this");
+    //    return {
+    //        template: "I can do it "
+    //    };
+    //});
+</script>
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+﻿@model MVCSample.Models.UiMenuModel
+@{
+    int count = Model.lstUiMenu.Where(o => o.ParentId == null).Count();
+
+    foreach (var item in Model.lstUiMenu)
+    {
+
+        if (item.ParentId == null)
+        {
+            var url = "/" + item.ControllerName + "/" + item.ActionName;
+            <h3>@item.Name</h3>
+            <div style="height:100%">
+                @{
+                    <a href="@url">@item.Name</a>
+            var childItems = Model.lstUiMenu.Where(o => o.ParentId == item.ID);
+            if (childItems.Count() > 0)
+            {
+                <ul style="list-style:none;">
+                    @{
+                foreach (var subItem in childItems)
+                {
+                    var subUrl = "/" + subItem.ControllerName + "/" + subItem.ActionName;
+                    <li><a href="@subUrl">@subItem.Name</a></li>
+                }
+                    }
+                </ul>
+            }
+                }
+            </div>
+
+        }
+
+
+
+    }
+}

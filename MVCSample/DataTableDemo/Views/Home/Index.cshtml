@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Case ListingsList";
+}
+<style>
+    /*.btn-sm {
+        padding: 0 4px !important;
+        margin: 0 4px !important;
+        /*border-color:#fff;*/
+    }
+
+    */ .btn-sm > *:first-child {
+        /*border-right: 1px solid #357EBD;*/
+        background-color: #357EBD;
+        line-height: 24px;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        padding-right: 5px;
+        margin: 0;
+        /*
+        position: absolute;
+        text-align: center;
+        width: 32px;
+
+        */
+    }
+</style>
+<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+<script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.bootstrap.js"></script>
+
+<script src="~/Scripts/App/AppBase/ajaxSetup.js"></script>
+
+<table id="tblEmployee" class="table table-hover table-bordered" style="margin-top:50px">
+    <thead>
+        <tr>
+            @*<th>Case Number</th>*@
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>ZipCode</th>
+            <th>MobileNo</th>
+            <th>EmailId</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+</table>
+<script src="~/Scripts/App/EmployeeList.js"></script>
+@section scripts
+{
+   
+    @*<script>
+        function Reload() {
+            var table = $('#tblEmployee').DataTable();
+            table.ajax.reload();
+        }
+    </script>*@
+}

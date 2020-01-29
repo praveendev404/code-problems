@@ -1,0 +1,66 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/knockout-3.4.0.js"></script>
+</head>
+<body>
+    <div>
+        <div>
+            <p>First name: <input data-bind="value: firstName" /></p>
+            <p>Last name: <input data-bind="value: lastName" /></p>
+            <h2>Hello, <span data-bind="text: fullName"> </span>!</h2>
+        </div>
+        <div>You've clicked <span data-bind='text: numberOfClicks'>&nbsp;</span> times</div>
+
+        <button data-bind='click: registerClick, disable: hasClickedTooManyTimes'>Click me</button>
+
+        <div data-bind='visible: hasClickedTooManyTimes'>
+            That's too many clicks! Please stop before you wear out your fingers.
+            <button data-bind='click: resetClicks'>Reset clicks</button>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var ViewModel = function (first, last) {
+            debugger
+            this.firstName = ko.observable(first);
+            this.lastName = ko.observable(last);
+
+            this.fullName = ko.computed(function () {
+                return this.firstName() + " " + this.lastName();
+            }, this);
+        };
+        ko.applyBindings(new ViewModel("", ""));
+
+
+
+        var ClickCounterViewModel = function () {
+            this.numberOfClicks = ko.observable(0);
+
+            this.registerClick = function () {
+                this.numberOfClicks(this.numberOfClicks() + 1);
+            };
+
+            this.resetClicks = function () {
+                this.numberOfClicks(0);
+            };
+
+            this.hasClickedTooManyTimes = ko.pureComputed(function () {
+                return this.numberOfClicks() >= 3;
+            }, this);
+        };
+
+        ko.applyBindings(new ClickCounterViewModel());
+    });
+</script>

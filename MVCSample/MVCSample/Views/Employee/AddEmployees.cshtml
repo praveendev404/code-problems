@@ -1,0 +1,141 @@
+﻿@model  MVCSample.Models.UIEmployee
+@*@model  MVCSample.Models.UIEmployee*@
+
+@{
+    ViewBag.Title = "AddEmployees";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<h3>Add Employees</h3>
+<script src="~/ListScripts/AddEmploye.js"></script>
+@{
+    var gender = ViewBag.Gender;
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">      
+        <hr />
+        <div>
+            <div style="float:right" >
+                <input type="submit" value="Save" class="btn btn-success" />
+                <input type="submit" value="GotoList" class="btn btn-danger" />
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div>
+            <table style="float:left;width:50%">
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        @Html.LabelFor(model => model.Employee.FirstName, new { @class = "control-label col-md-2" })
+
+                    </td>
+                    <td class="txttd">
+                        @Html.EditorFor(model => model.Employee.FirstName)
+                        @Html.ValidationMessageFor(model => model.Employee.FirstName)
+                    </td>
+                </tr>
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        @Html.LabelFor(model => model.Employee.LastName, new { @class = "control-label col-md-2" })
+                    </td>
+                    <td class="txttd">
+                        @Html.TextBoxFor(model => model.Employee.LastName)
+                        @Html.ValidationMessageFor(model => model.Employee.LastName)
+                    </td>
+                </tr>
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        @Html.LabelFor(model => model.Employee.Gender.GenderId, "Gender", new { @class = "control-label col-md-2" })
+                    </td>
+                    <td class="txttd">
+                        @*@Html.DropDownList("GenderId", new SelectList( ViewBag.Gender as System.Collections.IEnumerable, "GenderId", "Name"), "--Select--", new { id = "ddlGender" })*@
+                        @Html.DropDownListFor(model => model.Employee.GenderId, new SelectList(Model.lstGender as System.Collections.IEnumerable, "GenderId", "Name"), "--Select--")
+
+                        @Html.ValidationMessageFor(model => model.Employee.Gender.GenderId)
+                    </td>
+                </tr>
+
+
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        @Html.LabelFor(model => model.Employee.Address, new { @class = "control-label col-md-2" })
+                    </td>
+                    <td class="txttd">
+                        @Html.TextAreaFor(model => model.Employee.Address)
+                        @Html.ValidationMessageFor(model => model.Employee.Address)
+                    </td>
+                </tr>
+                @*<tr class="lbltr">
+                        <td class="lbltd"></td>
+                        <td class="txttd"></td>
+                    </tr>
+                    <tr class="lbltr">
+                        <td class="lbltd"></td>
+                        <td class="txttd"></td>
+                    </tr>*@
+            </table>
+            <table style="float:right;width:50%">
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        @Html.LabelFor(model => model.Employee.MobileNo, new { @class = "control-label col-md-2" })
+                    </td>
+                    <td class="txttd">
+                        @Html.EditorFor(model => model.Employee.MobileNo)
+                        @Html.ValidationMessageFor(model => model.Employee.MobileNo)
+                    </td>
+                </tr>
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        @Html.LabelFor(model => model.Employee.EmailId, new { @class = "control-label col-md-2" })
+                    </td>
+                    <td class="txttd">
+                        @Html.EditorFor(model => model.Employee.EmailId)
+                        @Html.ValidationMessageFor(model => model.Employee.EmailId)
+                    </td>
+                </tr>
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        @Html.LabelFor(model => model.Employee.Country.CountryId, "Country", new { @class = "control-label col-md-2" })
+                    </td>
+                    <td class="txttd">
+                        @*@Html.DropDownList("CountryId", new SelectList(ViewBag.Country as System.Collections.IEnumerable, "CountryId", "Name"), "--Select--", new { id = "ddlCountry" })*@
+                        @Html.DropDownListFor(model => model.Employee.CountryId, new SelectList(Model.lstCountry as System.Collections.IEnumerable, "CountryId", "Name"), "--Select--", new { @class = "ddlCountry" })
+                        @Html.ValidationMessageFor(model => model.Employee.Country.CountryId)
+                    </td>
+                </tr>
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        @Html.LabelFor(model => model.Employee.State.StateId, "State", new { @class = "control-label col-md-2" })
+                    </td>
+                    <td class="txttd">
+                        @*@Html.DropDownList("StateId", new SelectList(ViewBag.State as System.Collections.IEnumerable, "StateId", "Name"), "--Select--", new { id = "ddlState" })*@
+                        @Html.DropDownListFor(model => model.Employee.StateId, new SelectList("", "StateId", "Name"), "--Select--", new {id = "ddlState" })
+
+                        @Html.ValidationMessageFor(model => model.Employee.State.StateId)
+                    </td>
+                </tr>
+
+                <tr class="lbltr">
+                    <td class="lbltd">
+                        @Html.LabelFor(model => model.Employee.ZipCode, new { @class = "control-label col-md-2" })
+                    </td>
+                    <td class="txttd">
+                        @Html.EditorFor(model => model.Employee.ZipCode)
+                        @Html.ValidationMessageFor(model => model.Employee.ZipCode)
+                    </td>
+                </tr>
+            </table>
+        </div>
+        @Html.ValidationSummary(true)
+
+
+
+
+    </div>
+}
+
+<div>
+    @*@Html.ActionLink("Back to List", "Index")*@
+</div>

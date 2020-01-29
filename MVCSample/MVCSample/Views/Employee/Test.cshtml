@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<h2>Test</h2>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#myDataTable').dataTable({
+            bJQueryUI: true,
+            "bServerSide": true,
+            "sAjaxSource": "/Employee/AjaxHandler",
+            "bProcessing": true,
+            "aoColumns": [
+                            {
+                                "sName": "ID",
+                                "bSearchable": false,
+                                "bSortable": false,
+                                "fnRender": function (oObj) {
+                                    return '<a href=\"Details/' +
+                                    oObj.aData[0] + '\">View</a>';
+                                }
+                            },
+                            { "sName": "COMPANY_NAME" },
+                            { "sName": "ADDRESS" },
+                            { "sName": "TOWN" }
+            ]
+        });
+    });
+</script>
+<table id="myDataTable" class="display">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Company name</th>
+            <th>Address</th>
+            <th>Town</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+

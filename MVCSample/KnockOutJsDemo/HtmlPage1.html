@@ -1,0 +1,1412 @@
+﻿<html>
+<head>
+    <style type="text/css">
+        table td {
+            color: #000;
+            font-size: 13px !important;
+            font-family: Arial !important;
+        }
+
+        .tblBorder {
+        }
+
+            .tblBorder table {
+                color: #000;
+                border: solid 1px #000;
+                border-collapse: collapse;
+                margin-top: 2px;
+                margin-bottom: 2px;
+                width: 100%;
+                empty-cells: show;
+                font-weight: normal;
+            }
+
+                .tblBorder table th {
+                    color: #000;
+                    border: solid 1px #000;
+                    background-color: #EEEEEE;
+                    margin: 0px;
+                    padding: 5px;
+                    font-weight: bold;
+                    font-size: 13px;
+                    text-align: left;
+                }
+
+                .tblBorder table td {
+                    vertical-align: top;
+                    color: #000;
+                    border: solid 1px #000;
+                    margin: 0px;
+                    font-weight: normal;
+                    font-size: 13px;
+                    word-wrap: break-word;
+                }
+
+        .summary table td {
+            color: #000;
+            font-size: 13px !important;
+            font-family: Arial !important;
+        }
+
+        .tblReport {
+        }
+
+            .tblReport table {
+                color: #000;
+                border: solid 0px #EEEEEE;
+                border-collapse: collapse;
+                empty-cells: show;
+                font-weight: normal;
+                font-size: 13px;
+            }
+
+                .tblReport table th {
+                    color: #000;
+                    border: solid 1px #EEEEEE;
+                    margin: 0px;
+                    font-weight: bold;
+                    font-size: 13px;
+                    text-align: left;
+                }
+
+                .tblReport table td {
+                    vertical-align: middle;
+                    color: #000;
+                    border-right: solid 1px #CCCCCC;
+                    border-left: solid 1px #CCCCCC;
+                    padding: 2px 3px 2px 3px;
+                    font-weight: normal;
+                    font-size: 13px;
+                    word-wrap: break-word;
+                }
+
+        .currentResult {
+            font-weight: bold !important;
+            font-size: 13px !important;
+            width: 96px !important;
+        }
+
+        .previous {
+            width: 86px !important;
+        }
+
+        .reportContentLeft {
+            float: left;
+            min-height: 42px;
+            width: 670px;
+        }
+
+            .reportContentLeft b {
+                font-weight: 600;
+                font-size: 13px;
+                font-family: Arial;
+            }
+
+        .reportContentRight {
+            width: 340px; /* padding: 5px;*/ /* margin-left: 10px;*/
+            float: right;
+            min-height: 80px;
+            border: 1px solid #747474;
+        }
+
+            .reportContentRight b {
+                font-weight: 600;
+                font-size: 13px;
+                font-family: Arial;
+            }
+
+        .bodyStyle {
+            font-size: 13px;
+            font-family: Arial;
+        }
+
+            .bodyStyle b {
+                font-weight: 600;
+                font-size: 13px;
+            }
+
+        .commentBorder label {
+            font-family: Arial !important;
+            font-size: 13px !important;
+            font-weight: bold;
+        }
+
+
+
+        .Critical {
+            background-color: #ff6969 !important;
+        }
+
+        .Warning {
+            background-color: #ffff00 !important;
+        }
+
+        .Normal {
+            background-color: #92d050 !important;
+        }
+
+        .BCritical {
+            background-color: #FED0D0 !important;
+        }
+
+        .BWarning {
+            background-color: #FCF9CE !important;
+        }
+
+        .BNormal {
+            background-color: #CEE6C3 !important;
+        }
+
+
+        .commentBorder {
+            border-collapse: inherit;
+            margin: 0px 0px !important;
+            overflow: hidden;
+        }
+
+        .text p {
+            font-size: 13px !important;
+            font-family: Arial !important;
+        }
+
+        .cylinderLabel td {
+            font-size: 13px !important;
+            font-family: Arial !important;
+        }
+
+        .SampleDate {
+            padding: 1px 0px;
+            background-color: #e0dfdf;
+        }
+
+        .dvlegends {
+            width: 25px;
+            height: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 1000px; margin: auto;">
+        <div style="page-break-inside: avoid">
+            <table width="100%" cellpadding="0" cellspacing="0" style="vertical-align: top">
+                <tr>
+                    <td>
+                        <img src="$LogoImage$" alt="LOGO" />
+                    </td>
+                    <!--<td>
+                        <img src="$NameImage$" alt="LOGO" />
+                    </td>-->
+                </tr>
+            </table>
+            <br />
+            <br />
+            <div style="min-height: 1250px; vertical-align: middle; margin: auto">
+                <div style="height: 200px"></div>
+                <table width="99.6%" style="vertical-align: central;" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td style="font-size: 22px;">
+                            <b>
+                                <label style="font-size: 23px;">
+                                    Summary Report for
+                                </label>
+                                <label style="font-size: 24px; color: #800000">
+                                    $VesselName$
+                                </label>
+                                <label style="font-size: 24px; color: #800000">
+                                    ( $IMoNo$ )
+                                </label>
+                                <label style="font-size: 23px;">
+                                    dated
+                                </label>
+                                <label style="font-size: 24px; color: #800000">
+                                    $PublishedDate$
+                                </label>
+                            </b>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label style="font-size: 23px; font-weight: bold">
+                                OIL RATING
+                            </label>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 35px; font-weight: 300" valign="top">
+                            <div width="99%">
+                                <label style="font-size: 16px;">
+                                    $OilRating$
+                                </label>
+                            </div>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <label style="font-size: 23px; font-weight: bold">
+                                UNIT RATING
+                            </label>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 35px; font-weight: 300" valign="top">
+                            <div width="99%">
+                                <label style="font-size: 16px;">
+                                    $UnitRating$
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;&nbsp;&nbsp;
+                        </td>
+                    </tr>
+                    <!--<tr>
+                               <td style="vertical-align: top; clear: both; border: 0px; padding: 0px;">
+                                   <br />
+                                   <br />
+                                   <br />
+                                   $if($SystemOilDiluctionHeading$)$
+                                   <label style="font-size: 23px; font-weight: bold">
+                                       Stuffing box performance
+                                   </label>
+                                   <br />
+                                   <label style="font-size: 16px;">The stuffing box performance is evaluated by the share of System Oil in scrape down sample landed per unit.</label>
+                                   $endif$
+                                   <br />
+                                   <br />
+                                   $SystemOilGraphFormat$
+                               </td>
+                           </tr>-->
+                </table>
+            </div>
+        </div>
+
+
+
+        <div class="summary" style="page-break-before: always;">
+            <table width="100%" cellpadding="0" cellspacing="0" style="vertical-align: top;">
+                <tr>
+                    <td>
+                        <img src="$LogoImage$" alt="LOGO" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <div style=" vertical-align: top">
+                <table width="70%" style="vertical-align: top;" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td valign="top" style="height: 15px; vertical-align: top;">
+                            <span style="font-size: 22px; font-weight: 400; height: 15px">
+                                $VesselName$&nbsp;[$IMoNo$]
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" style="height: 15px; vertical-align: top; padding-top: 5px">
+                            <label style="font-size: 22px; font-weight: 400; height: 15px">
+                                $MachineryName$&nbsp;[CYLINDER SCRAPEDOWN]
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+
+                <div style="width: 99.6%; border: 1px solid #747474; margin-left: 1px; margin-bottom: 3px; margin-top: 8px"
+                     class="cylinderLabel">
+                    <table cellpadding="0" cellspacing="0" width="99.6%" style="background-color: #EEEEEE; margin: 1px; padding-right: 5px;"
+                           border="0">
+                        <tr>
+                            <td width="22%">
+                                <b style="font-weight: 600; font-size: 13px; font-family: Arial;">Manufacturer</b>
+                            </td>
+                            <td width="1%">
+                                :
+                            </td>
+                            <td width="26%">
+                                <span style="font-size: 13px; font-family: Arial;">$CylinderLabelDetails.UoaSample.MapModel.Manufacturer.Name$</span>
+                            </td>
+                            <td width="24%">
+                                <b style="font-weight: 600; font-size: 13px; font-family: Arial;">Model</b>
+                            </td>
+                            <td width="1%">
+                                :
+                            </td>
+                            <td width="27%" style="font-size: 13px; font-family: Arial;">
+                                <span style="font-size: 13px; font-family: Arial;">$CylinderLabelDetails.UoaSample.MapModel.MachineryModel.Name$ &nbsp; $MCR$</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b style="font-weight: 600; font-size: 14px; font-family: Arial;">Fuel (Sulphur[%wt])</b>
+                            </td>
+                            <td>
+                                :
+                            </td>
+                            <td style="font-size: 13px; font-family: Arial;">
+                                <span style="font-size: 13px; font-family: Arial;">$CylinderLabelDetails.UoaSample.FuelGrade.Name$&nbsp;($UoaReportSample.CurrentOverAllRating.FuelSulphurContent$%)</span>
+                            </td>
+                            <td>
+                                <b style="font-weight: 600; font-size: 14px; font-family: Arial;">Lubricator</b>
+                            </td>
+                            <td>
+                                :
+                            </td>
+                            <td style="font-size: 13px; font-family: Arial;">
+                                <span style="font-size: 13px; font-family: Arial;">$VesselLubricator$</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b style="font-weight: 600; font-size: 13px; font-family: Arial;">Lubricant in Use</b>
+                            </td>
+                            <td>
+                                :
+                            </td>
+                            <td style="font-size: 13px; font-family: Arial;">
+                                <span style="font-size: 13px; font-family: Arial;">$LubricantInUseAll$</span>
+                            </td>
+                            <td>
+                                <b style="font-weight: 600; font-size: 14px; font-family: Arial;">Lubricant Recomm..</b>
+                            </td>
+                            <td>
+                                :
+                            </td>
+                            <td style="font-size: 13px; font-family: Arial;">
+                                <span style="font-size: 13px; font-family: Arial;">$CylinderLabelDetails.UoaSample.MapModel.Fuel.Name$</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        <table style="width:100%">
+            <tr>
+                <td>
+                    <div style="border:1px solid black;height:100px;margin-left:37px;margin-right:36px">
+                      Sweep Test Report :
+                        <br />
+                        $UnitRating$
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="dvGraph">
+                        <iframe class="iframeImg" id="frm1" src=$FeBnVsFeedRate$ width="700" height="389" scrolling="no" style="display:none;"></iframe>
+                        <img src="$SweeptestFeBnFeedRateImg$" id="SweeptestFeBnFeedRateImg" />
+                    </div>
+                </td>
+            </tr>
+            <!--<tr>
+                <td>
+                    <div style="border:1px solid black;height:100px;margin-left:37px;margin-right:36px">
+                        bottem div1
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div style="border:1px solid black;height:100px;margin-left:37px;margin-right:36px">
+                        bottem div2
+                    </div>
+                </td>
+            </tr>-->
+        </table>
+        <table style="width:100%;">
+            <tr>
+                <td style="float: left;">
+                    <label>
+                        Support: technical@lukoil.com
+                    </label>
+                </td>
+                <td>
+                    <label style="float: right;">
+                        Dated: $PublishedDate$
+                    </label>
+                </td>
+            </tr>
+        </table>
+        <!-- <br /> -->
+        <!-- <br /> -->
+        $CylinderSummaryDetails : { summaryDtl|
+        <div style="page-break-before: always;" class="summary">
+            <table width="100%" cellpadding="0" cellspacing="0" style="vertical-align: top;">
+                <tr>
+                    <td>
+                        <img src="$LogoImage$" alt="LOGO" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <div style="height: 1250px; min-height: 1250px; vertical-align: top">
+                <table width="70%" style="vertical-align: top;" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td valign="top" style="height: 15px; vertical-align: top;">
+                            <span style="font-size: 22px; font-weight: 400; height: 15px">
+                                $VesselName$&nbsp;[$IMoNo$]
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" style="height: 15px; vertical-align: top; padding-top: 5px">
+                            <label style="font-size: 22px; font-weight: 400; height: 15px">
+                                $MachineryName$&nbsp;[CYLINDER SCRAPEDOWN]
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+                $CylinderLabelDetails : { UoaReportSample|
+                <div style="width: 99.6%; border: 1px solid #747474; margin-left: 1px; margin-bottom: 3px; margin-top: 8px"
+                     class="cylinderLabel">
+                    <table cellpadding="0" cellspacing="0" width="99.6%" style="background-color: #EEEEEE; margin: 1px; padding-right: 5px;"
+                           border="0">
+                        <tr>
+                            <td width="22%">
+                                <b style="font-weight: 600; font-size: 13px; font-family: Arial;">Manufacturer</b>
+                            </td>
+                            <td width="1%">
+                                :
+                            </td>
+                            <td width="26%">
+                                <span style="font-size: 13px; font-family: Arial;">$UoaReportSample.UoaSample.MapModel.Manufacturer.Name$</span>
+                            </td>
+                            <td width="24%">
+                                <b style="font-weight: 600; font-size: 13px; font-family: Arial;">Model</b>
+                            </td>
+                            <td width="1%">
+                                :
+                            </td>
+                            <td width="27%" style="font-size: 13px; font-family: Arial;">
+                                <span style="font-size: 13px; font-family: Arial;">$UoaReportSample.UoaSample.MapModel.MachineryModel.Name$ &nbsp; $MCR$</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b style="font-weight: 600; font-size: 14px; font-family: Arial;">Fuel (Sulphur[%wt])</b>
+                            </td>
+                            <td>
+                                :
+                            </td>
+                            <td style="font-size: 13px; font-family: Arial;">
+                                <span style="font-size: 13px; font-family: Arial;">$UoaReportSample.UoaSample.FuelGrade.Name$&nbsp;($UoaReportSample.CurrentOverAllRating.FuelSulphurContent$%)</span>
+                            </td>
+                            <td>
+                                <b style="font-weight: 600; font-size: 14px; font-family: Arial;">Lubricator</b>
+                            </td>
+                            <td>
+                                :
+                            </td>
+                            <td style="font-size: 13px; font-family: Arial;">
+                                <span style="font-size: 13px; font-family: Arial;">$VesselLubricator$</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b style="font-weight: 600; font-size: 13px; font-family: Arial;">Lubricant in Use</b>
+                            </td>
+                            <td>
+                                :
+                            </td>
+                            <td style="font-size: 13px; font-family: Arial;">
+                                <span style="font-size: 13px; font-family: Arial;">$LubricantInUseAll$</span>
+                            </td>
+                            <td>
+                                <b style="font-weight: 600; font-size: 14px; font-family: Arial;">Lubricant Recomm..</b>
+                            </td>
+                            <td>
+                                :
+                            </td>
+                            <td style="font-size: 13px; font-family: Arial;">
+                                <span style="font-size: 13px; font-family: Arial;">$UoaReportSample.UoaSample.MapModel.Fuel.Name$</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                }$
+                <table width="100%" height="500px" style="vertical-align: top;">
+                    <tr>
+                        <td>
+                            <br />
+                            $summaryDtl$
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        }$
+        <div>
+            <table style="width: 100%;">
+                $UoaReportSample : { UoaReportSample|
+                <tr style="page-break-before: always">
+                    <td width="100%">
+                        <table width="100%" cellpadding="0" cellspacing="0" style="vertical-align: top">
+                            <tr>
+                                <td>
+                                    <img src="$LogoImage$" alt="LOGO" />
+                                </td>
+                                <!--<td>
+                                    <img src="$NameImage$" alt="LOGO" />
+                                </td>-->
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="font-size: 13px; font-weight: bold;">
+                                    <br />
+                                </td>
+                            </tr>
+                        </table>
+                        <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse; clear: both">
+                            <tr>
+                                <td valign="top" style="height: 15px">
+                                    <span style="font-size: 22px; font-weight: 400;">$VesselName$&nbsp;[$IMoNo$] </span>
+                                </td>
+                                <!--<td width="350px" rowspan="2" valign="middle" height="60px" style="text-align: center;">
+                                    <table cellpadding="0" cellspacing="0" width="99%" style="float: right; margin-left: 1px">
+                                        <tr>
+                                            <td>
+                                                <div style="width: 346px; float: right">
+                                                    <b>Sweep Test</b>
+                                                </div>
+                                            </td>
+                                             <td class="$UoaReportSample.BackGroudColor$">
+                                                <div style="width: 346px; padding-left:50Px">
+                                                    $UoaReportSample.RatingMediumImageUrl$
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>-->
+                            </tr>
+                            <tr>
+                                <td style="height: 15px; vertical-align: top">
+                                    <span style="font-size: 22px; font-weight: 400;">
+                                        $UoaReportSample.UoaSample.MapModel.Machinery.Name$&nbsp;
+                                        [$UoaReportSample.UoaSample.SamplingPoint$]
+                                    </span> &nbsp;<label style="font-size: 22px; font-weight: 400;">
+                                        [$UoaReportSample.UoaSample.MapModelCylinderName$]
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td valign="top">
+                                    <table cellpadding="1" cellspacing="0">
+                                        <tr style="margin-bottom: 2px">
+                                            <td class="tblReport" style="width:890px; vertical-align: top; float: left; height: auto; margin-right: 0px">
+                                                <div style="width: 100%; margin-right: 0px; margin-top: 2px">
+                                                    <table width="100%" cellpadding="0" cellspacing="0" style="margin-right: 0px; border-right: solid 1px #CCCCCC;">
+                                                        <tr bgcolor="#C3C3C3">
+                                                            <th style="border: solid 0px #CCCCCC; border-left: solid 1px #CCCCCC" colspan="4"></th>
+                                                            <th bgcolor="#C3C3C3">
+                                                                Sample Details
+                                                            </th>
+                                                            <th bgcolor="#C3C3C3">
+                                                                1 (Current)
+                                                            </th>
+                                                            <th bgcolor="#C3C3C3">
+                                                                2
+                                                            </th>
+                                                            <th bgcolor="#C3C3C3" style="border-right: 1px solid #CCCCCC;">
+                                                                3
+                                                            </th>
+                                                            <th bgcolor="#C3C3C3" style="border-right: 1px solid #CCCCCC;">
+                                                                4
+                                                            </th>
+                                                            <th bgcolor="#C3C3C3" style="border-right: 1px solid #CCCCCC;">
+                                                                5
+                                                            </th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4" class="SampleDate">
+                                                                <table style="width: 100%;">
+                                                                    <tr>
+                                                                        <td style="border-left: 0px; border-right: 0px!important; font-weight: bold; width: 40%;">
+                                                                            Maker
+                                                                        </td>
+                                                                        <td style="border-left: 0px; border-right: 0px">: $UoaReportSample.UoaSample.MapModel.Manufacturer.Name$</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td>
+                                                                Rating
+                                                            </td>
+                                                            <td class="currentResult $UoaReportSample.CurrentOverAllRating.RatingName$">
+                                                                $UoaReportSample.CurrentOverAllRating.RatingName$
+                                                            </td>
+                                                            <td class="previous $UoaReportSample.Previous1OverAllRating.RatingName$">
+                                                                $UoaReportSample.Previous1OverAllRating.RatingName$
+                                                            </td>
+                                                            <td class="previous $UoaReportSample.Previous2OverAllRating.RatingName$">
+                                                                $UoaReportSample.Previous2OverAllRating.RatingName$
+                                                            </td>
+                                                            <td class="previous $UoaReportSample.Previous2OverAllRating.RatingName$">
+                                                                $UoaReportSample.Previous3OverAllRating.RatingName$
+                                                            </td>
+                                                            <td class="previous $UoaReportSample.Previous2OverAllRating.RatingName$">
+                                                                $UoaReportSample.Previous4OverAllRating.RatingName$
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4" class="SampleDate">
+                                                                <table style="width: 100%">
+                                                                    <tr>
+                                                                        <td style="border-left: 0px; border-right: 0px!important; font-weight: bold; width: 40%;">Model</td>
+                                                                        <td style="border-left: 0px; border-right: 0px">: $UoaReportSample.UoaSample.MapModel.MachineryModel.Name$</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td>
+                                                                Sample No
+                                                            </td>
+                                                            <td class="currentResult">
+                                                                $UoaReportSample.CurrentOverAllRating.SampleNo$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous1OverAllRating.SampleNo$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous2OverAllRating.SampleNo$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous3OverAllRating.SampleNo$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous4OverAllRating.SampleNo$
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4" class="SampleDate">
+                                                                <table style="width: 100%">
+                                                                    <tr>
+                                                                        <td style="border-left: 0px; border-right: 0px!important; font-weight: bold; width: 40%;">MCR</td>
+                                                                        <td style="border-left: 0px; border-right: 0px">: $MCR$</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td>
+                                                                Sampled Date
+                                                            </td>
+                                                            <td class="currentResult">
+                                                                $UoaReportSample.CurrentOverAllRating.SampleDate;format="dd-MM-yy"$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous1OverAllRating.SampleDate;format="dd-MM-yy"$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous2OverAllRating.SampleDate;format="dd-MM-yy"$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous3OverAllRating.SampleDate;format="dd-MM-yy"$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous4OverAllRating.SampleDate;format="dd-MM-yy"$
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4" class="SampleDate">
+                                                                <table style="width: 100%">
+                                                                    <tr>
+                                                                        <td style="border-left: 0px; border-right: 0px!important; font-weight: bold; width: 40%;">Lubricator</td>
+                                                                        <td style="border-left: 0px; border-right: 0px">: $VesselLubricator$</td>
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+                                                            <td>
+                                                                Lub.. in Use
+                                                            </td>
+                                                            <td class="currentResult" style="font-size: 10px !important;">
+                                                                $UoaReportSample.CurrentOverAllRating.FuelName$
+                                                            </td>
+                                                            <td class="previous" style="font-size: 9px !important;">
+                                                                $UoaReportSample.Previous1OverAllRating.FuelName$
+                                                            </td>
+                                                            <td class="previous" style="font-size: 9px !important;">
+                                                                $UoaReportSample.Previous2OverAllRating.FuelName$
+                                                            </td>
+                                                            <td class="previous" style="font-size: 9px !important;">
+                                                                $UoaReportSample.Previous3OverAllRating.FuelName$
+                                                            </td>
+                                                            <td class="previous" style="font-size: 9px !important;">
+                                                                $UoaReportSample.Previous4OverAllRating.FuelName$
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4" class="SampleDate">
+                                                                <table style="width: 100%">
+                                                                    <tr>
+                                                                        <td style="border-left: 0px; border-right: 0px!important; font-weight: bold; width: 40%;">Engine Hours</td>
+                                                                        <td style="border-left: 0px; border-right: 0px">: $UoaReportSample.CurrentOverAllRating.EngineHrs$</td>
+
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+                                                            <td>
+                                                                Liner Hours
+                                                            </td>
+                                                            <td class="currentResult">
+                                                                $UoaReportSample.CurrentOverAllRating.LinerHrs$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous1OverAllRating.LinerHrs$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous2OverAllRating.LinerHrs$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous3OverAllRating.LinerHrs$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous4OverAllRating.LinerHrs$
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4" class="SampleDate">
+                                                                <table style="width: 100%">
+                                                                    <tr>
+                                                                        <td style="border-left: 0px; border-right: 0px!important; font-weight: bold; width: 40%;">Recomm.Oil</td>
+                                                                        <td style="border-left: 0px; border-right: 0px">: $UoaReportSample.UoaSample.MapModel.Fuel.Name$</td>
+
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+                                                            <td>
+                                                                Crown Hours
+                                                            </td>
+                                                            <td class="currentResult">
+                                                                $UoaReportSample.CurrentOverAllRating.CrownHrs$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous1OverAllRating.CrownHrs$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous2OverAllRating.CrownHrs$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous3OverAllRating.CrownHrs$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous4OverAllRating.CrownHrs$
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4" class="SampleDate">
+                                                                <table style="width: 100%">
+                                                                    <tr>
+                                                                        <td style="border-left: 0px; border-right: 0px!important; font-weight: bold; width: 40%;">Fuel Grade</td>
+                                                                        <td style="border-left: 0px; border-right: 0px">: $UoaReportSample.UoaSample.FuelGrade.Name$ </td>
+
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+                                                            <td>
+                                                                Piston Ring Hours
+                                                            </td>
+                                                            <td class="currentResult">
+                                                                $UoaReportSample.CurrentOverAllRating.PistonRingHrs$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous1OverAllRating.PistonRingHrs$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous2OverAllRating.PistonRingHrs$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous3OverAllRating.PistonRingHrs$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous4OverAllRating.PistonRingHrs$
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4" class="SampleDate">
+                                                                <table style="width: 100%">
+                                                                    <tr>
+                                                                        <td style="border-left: 0px; border-right: 0px!important; font-weight: bold; width: 40%;">Port Landed</td>
+                                                                        <td style="border-left: 0px; border-right: 0px">: $UoaReportSample.UoaSample.UoaReceivedSample.Port.Name$</td>
+
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+                                                            <td>
+                                                                Fuel Valve Hours
+                                                            </td>
+                                                            <td class="currentResult">$UoaReportSample.CurrentOverAllRating.FuelValveRunningHours$</td>
+                                                            <td class="previous">$UoaReportSample.Previous1OverAllRating.FuelValveRunningHours$</td>
+                                                            <td class="previous">$UoaReportSample.Previous2OverAllRating.FuelValveRunningHours$</td>
+                                                            <td class="previous">$UoaReportSample.Previous3OverAllRating.FuelValveRunningHours$</td>
+                                                            <td class="previous">$UoaReportSample.Previous4OverAllRating.FuelValveRunningHours$</td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4" class="SampleDate">
+                                                                <table style="width: 100%">
+                                                                    <tr>
+                                                                        <td style="border-left: 0px; border-right: 0px!important; font-weight: bold; width: 40%;">Sampled By</td>
+                                                                        <td style="border-left: 0px; border-right: 0px">: $UoaReportSample.UoaSample.Rank.Name$ </td>
+
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+                                                            <td>
+                                                                Feed Rate[g/kW/h]
+                                                            </td>
+                                                            <td class="currentResult">
+                                                                $UoaReportSample.CurrentOverAllRating.MCLFeedRate$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous1OverAllRating.MCLFeedRate$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous2OverAllRating.MCLFeedRate$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous3OverAllRating.MCLFeedRate$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous4OverAllRating.MCLFeedRate$
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4" class="SampleDate">
+                                                                <table style="width: 100%">
+                                                                    <tr>
+                                                                        <td style="border-left: 0px; border-right: 0px!important; font-weight: bold; width: 40%;">Dispatched</td>
+                                                                        <td style="border-left: 0px; border-right: 0px">: $UoaReportSample.UoaSample.UoaReceivedSample.DispatchedDate$</td>
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+                                                            <td>
+                                                                Fuel,Sulphur[%wt]
+                                                            </td>
+                                                            <td class="currentResult">
+                                                                $UoaReportSample.CurrentOverAllRating.FuelSulphurContent$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous1OverAllRating.FuelSulphurContent$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous2OverAllRating.FuelSulphurContent$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous3OverAllRating.FuelSulphurContent$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous4OverAllRating.FuelSulphurContent$
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4" class="SampleDate">
+                                                                <table style="width: 100%">
+                                                                    <tr>
+
+                                                                        <td style="border-left: 0px; border-right: 0px!important; font-weight: bold; width: 40%;">Received</td>
+                                                                        <td style="border-left: 0px; border-right: 0px">: $UoaReportSample.UoaSample.UoaReceivedSample.ReceivedDate$</td>
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+                                                            <td>
+                                                                Sp. Feed Rate
+                                                            </td>
+                                                            <td class="currentResult">
+                                                                $UoaReportSample.CurrentOverAllRating.SpecificFeedRate$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous1OverAllRating.SpecificFeedRate$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous2OverAllRating.SpecificFeedRate$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous3OverAllRating.SpecificFeedRate$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous4OverAllRating.SpecificFeedRate$
+                                                            </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4" class="SampleDate">
+                                                                <table style="width: 100%">
+                                                                    <tr>
+                                                                        <td style="border-left: 0px; border-right: 0px!important; font-weight: bold; width: 40%;"></td>
+                                                                        <td style="border-left: 0px; border-right: 0px"></td>
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+                                                            <td>
+                                                                Engine Load[%MCR]
+                                                            </td>
+                                                            <td class="currentResult">
+                                                                $UoaReportSample.CurrentOverAllRating.EngineLoad$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous1OverAllRating.EngineLoad$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous2OverAllRating.EngineLoad$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous3OverAllRating.EngineLoad$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous4OverAllRating.EngineLoad$
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4" class="SampleDate">
+                                                                <table style="width: 100%">
+                                                                    <tr>
+                                                                        <td style="border-left: 0px; border-right: 0px!important; font-weight: bold; width: 40%;"></td>
+                                                                        <td style="border-left: 0px; border-right: 0px"></td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td>
+                                                                Engine Rpm[min¹]
+                                                            </td>
+                                                            <td class="currentResult">
+                                                                $UoaReportSample.CurrentOverAllRating.EngineRPM$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous1OverAllRating.EngineRPM$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous2OverAllRating.EngineRPM$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous3OverAllRating.EngineRPM$
+                                                            </td>
+                                                            <td class="previous">
+                                                                $UoaReportSample.Previous4OverAllRating.EngineRPM$
+                                                            </td>
+                                                        </tr>
+                                                        $UoaReportSample.UoaLubeCharSections :{ sections | $if (sections.IsLimit)$
+                                                        <tr bgcolor="#C3C3C3">
+                                                            <td class="previous" style="border-left: solid 1px #CCCCCC; border-top: solid 1px #CCCCCC; font-size: 13px; font-weight: bold; color: #000">
+                                                                New Oil
+                                                            </td>
+                                                            <td class="previous" style="border-left: solid 1px #CCCCCC; border-top: solid 1px #CCCCCC; font-size: 13px; font-weight: bold; color: #000">
+                                                                Drain Oil limits
+                                                            </td>
+                                                            <td colspan="2" class="previous" style="border-left: solid 1px #CCCCCC; border-top: solid 1px #CCCCCC; font-size: 13px; font-weight: bold; color: #000; width:400px!important;">
+                                                                Sys. Oil
+                                                            </td>
+                                                            <td colspan="7" style="font-size: 13px; font-weight: bold; color: #000">
+                                                                $sections.CharSectionName$
+                                                            </td>
+                                                        </tr>
+                                                        $sections.UoaSampleLubeCharResult :{ charResult |
+                                                        <tr>
+                                                            <td style="border-left: solid 1px #CCCCCC;">
+                                                                $charResult.NewOil$
+                                                            </td>
+                                                            <td style=" border-left: solid 1px #CCCCCC;">
+                                                                $charResult.DrainOil$
+                                                            </td>
+                                                            <td colspan="2" style="border-left: solid 1px #CCCCCC;">
+                                                                $charResult.SystemOil$
+                                                            </td>
+                                                            <td style="width: 180px">
+                                                                $charResult.LubeCharTypeName$
+                                                            </td>
+                                                            <td class="currentResult $charResult.CurrentRating$">
+                                                                $charResult.CurrentResult$
+                                                            </td>
+                                                            <td class="previous $charResult.Previous1Rating$">
+                                                                $charResult.Previous1Result$
+                                                            </td>
+                                                            <td class="previous $charResult.Previous2Rating$">
+                                                                $charResult.Previous2Result$
+                                                            </td>
+                                                            <td class="previous $charResult.Previous2Rating$">
+                                                                $charResult.Previous3Result$
+                                                            </td>
+                                                            <td class="previous $charResult.Previous2Rating$">
+                                                                $charResult.Previous4Result$
+                                                            </td>
+                                                        </tr>
+                                                        }$
+                                                        <tr>
+                                                            <td style="border-bottom: solid 1px #CCCCCC;"></td>
+                                                            <td style="border-bottom: solid 1px #CCCCCC;"></td>
+                                                            <td style="border-bottom: solid 1px #CCCCCC;"></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        $else$
+                                                        <tr>
+                                                            <td style="border: 0px"></td>
+                                                            <td style="border: solid 1px #CCCCCC;"></td>
+                                                            <td colspan="2" style="border: solid 1px #CCCCCC;"></td>
+                                                            <td bgcolor="#C3C3C3" colspan="7" style="font-size: 13px; font-weight: bold; color: #000">
+                                                                $sections.CharSectionName$
+                                                            </td>
+                                                        </tr>
+                                                        $sections.UoaSampleLubeCharResult :{ charResult |
+                                                        <tr>
+                                                            <td style="border: 0px"></td>
+                                                            <td style="border-left: solid 1px #C3C3C3">$charResult.DrainOil$</td>
+                                                            <td colspan="2" style="border-left: solid 1px #C3C3C3">
+                                                                $charResult.SystemOil$
+                                                            </td>
+                                                            <td>
+                                                                $charResult.LubeCharTypeName$
+                                                            </td>
+                                                            <td class=" $charResult.CurrentRating$">
+                                                                $charResult.CurrentResult$
+                                                            </td>
+                                                            <td class=" $charResult.Previous1Rating$">
+                                                                $charResult.Previous1Result$
+                                                            </td>
+                                                            <td class=" $charResult.Previous2Rating$">
+                                                                $charResult.Previous2Result$
+                                                            </td>
+                                                            <td class=" $charResult.Previous2Rating$">
+                                                                $charResult.Previous3Result$
+                                                            </td>
+                                                            <td class=" $charResult.Previous2Rating$">
+                                                                $charResult.Previous4Result$
+                                                            </td>
+                                                        </tr>
+                                                        }$ $endif$ }$
+                                                        <tr>
+                                                            <td style="border: 0px"></td>
+                                                            <td style="border-bottom: solid 1px #CCCCCC;"></td>
+                                                            <td style="border-bottom: solid 1px #CCCCCC;"></td>
+                                                            <td style="border-bottom: solid 1px #CCCCCC;"></td>
+                                                            <td style="border-bottom: solid 1px #CCCCCC;"></td>
+                                                            <td style="border-bottom: solid 1px #CCCCCC;"></td>
+                                                            <td style="border-bottom: solid 1px #CCCCCC;"></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            $if($UoaReportSample.IsPageBreakRequired$)$
+                            <tr>
+                                <td width="99%" style="vertical-align: bottom; page-break-after: always;" colspan="2">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td width="99%" colspan="2">
+                                    <img src="$LogoImage$" alt="LOGO11" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td width="99%" style="height: 180px; vertical-align: bottom" colspan="2">
+                                    <table cellpadding="0" cellspacing="0" width="100%" style="height: 171px">
+                                        <tr>
+                                            <td class="commentBorder" style="vertical-align: top;">
+                                                <div style="border: 1px solid #CCCCCC; width: 99.88%; height: 130px; margin-top: 2px">
+                                                    <table cellpadding="0" cellspacing="0" height="130px" style="padding: 0px; margin: 1px;">
+                                                        <tr>
+                                                            <td valign="top">
+                                                                <label>
+                                                                    Oil Rating:
+                                                                </label><br />
+                                                                $UoaReportSample.UoaSample.UoaResult.OilComments$
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top">
+                                                                <label>
+                                                                    Unit Rating:
+                                                                </label><br />
+                                                                $UoaReportSample.UoaSample.UoaResult.UnitComments$
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="commentBorder" style="vertical-align: top; width: 99%;">
+                                                <div style="border: 1px solid #CCCCCC; width: 99.88%; margin-top: 2px">
+                                                    <div class="$UoaReportSample.BackGroudColor$" style="height: 40px; width: 99.8%; margin: 1px">
+                                                        <label>
+                                                            Action:
+                                                        </label>
+                                                        <br />
+                                                        $UoaReportSample.UoaSample.UoaResult.Action$
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            $else$
+                            <tr>
+                                <td width="99%" style="height: 180px; vertical-align: bottom">
+                                    <table cellpadding="0" cellspacing="0" width="100%" style="height: 171px">
+                                        <tr>
+                                            <td class="commentBorder" style="vertical-align: top;">
+                                                <div style="border: 1px solid #CCCCCC; width: 99.88%; height: 130px; margin-top: 2px">
+                                                    <table cellpadding="0" cellspacing="0" height="130px" style="padding: 0px; margin: 1px;">
+                                                        <tr>
+                                                            <td valign="top">
+                                                                <label>
+                                                                    Oil Rating:
+                                                                </label><br />
+                                                                $UoaReportSample.UoaSample.UoaResult.OilComments$
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top">
+                                                                <label>
+                                                                    Unit Rating:
+                                                                </label><br />
+                                                                $UoaReportSample.UoaSample.UoaResult.UnitComments$
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="commentBorder" style="vertical-align: top; width: 99%;">
+                                                <div style="border: 1px solid #CCCCCC; width: 99.88%; margin-top: 2px">
+                                                    <div class="$UoaReportSample.BackGroudColor$" style="height: 40px; width: 99.8%; margin: 1px">
+                                                        <label>
+                                                            Action:
+                                                        </label>
+                                                        <br />
+                                                        $UoaReportSample.UoaSample.UoaResult.Action$
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            $endif$
+                            <tr>
+                                <td>
+                                    <label style="float: left;">
+                                        Support: technical@lukoil.com
+                                    </label>
+                                    <label style="float: right;">
+                                        Dated: $PublishedDate$
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                }$
+            </table>
+        </div>
+        <div style="margin-top: 5px; padding: 5px; page-break-inside: avoid; page-break-before: always"
+             class="border_2 btext1">
+            <table width="100%" cellpadding="0" cellspacing="0" style="vertical-align: top">
+                <tr>
+                    <td>
+                        <img src="$LogoImage$" alt="LOGO" />
+                    </td>
+                    <!-- <td>
+                        <img src="$NameImage$" alt="LOGO" />
+                    </td>-->
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-size: 13px; font-weight: bold;">
+                        <br />
+                    </td>
+                </tr>
+            </table>
+            <div class="text divGlossary" style="margin-top: 10px">
+
+                <table style="width: 100%; margin: auto; border: 1px solid #cccccc; font-size: 13px">
+                    <tr>
+                        <td colspan="2">
+                            <sapn style="font-size: 14px;"><b>Standard Test Methods Employed:</b></sapn>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Analysis Test Method</b></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Viscosity (KV@40<sup>o</sup> and 100<sup>o</sup>C)</td>
+                        <td>(ASTM D445-12)</td>
+                    </tr>
+                    <tr>
+                        <td>Flash Point (@200&degC)</td>
+                        <td>(ASTM D3828-12a)</td>
+                    </tr>
+                    <tr>
+                        <td>Flash Point (&degC)</td>
+                        <td>(ASTM D3828-12b)</td>
+                    </tr>
+                    <tr>
+                        <td>Soot/Insoluble </td>
+                        <td>(ASTM D7899-13; ASTM D893-14; ASTM E2412-10)</td>
+                    </tr>
+                    <tr>
+                        <td>Base Number </td>
+                        <td>(ASTM D2896-11)</td>
+                    </tr>
+                    <tr>
+                        <td>Acid Number </td>
+                        <td>(ASTM D664-11a)</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style1">Water </td>
+                        <td>(ASTM E2412-10; ASTM D6304-07; ASTM D95-13)</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style1">Oxidation </td>
+                        <td>(ASTM E2412-10)</td>
+                    </tr>
+                    <tr>
+                        <td>PQ Index </td>
+                        <td>(Manufacturer Method)</td>
+                    </tr>
+                    <tr>
+                        <td>ISO Cleanliness Code </td>
+                        <td>(ISO 11500:2008 & ISO 4406:99)</td>
+                    </tr>
+                    <tr>
+                        <td>Elemental Analysis(Wear,Contaminants and Additive Elements)</td>
+                        <td>(ASTM D5185-13)</td>
+                    </tr>
+                </table>
+
+                <div class="text" style="margin-top: 10px; page-break-inside: avoid;">
+                    <table style="width: 100%; margin: auto;" cellspacing="0;" cellpadding="0">
+                        <tr>
+                            <td style="padding-left: 3px; border: 1px solid #cccccc; width: 30%;">
+                                <table>
+                                    <tr>
+                                        <td>KV@100°C[cSt]/(Corr)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>BN [mgKOH/g] /(Corr)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PQ Index/2ml /(Corr) </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Iron (Fe)    /(Corr)    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td style="border: 1px solid #cccccc;">
+                                1st value is the test result and the 2nd is the corrected for system oil dilution
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="text" style="margin-top: 10px; page-break-inside: avoid">
+                    <table style="width: 100%; margin: auto; border: 1px solid #cccccc;">
+                        <tr>
+                            <td>
+                                <p>
+                                    <b>Lubricant Analysis Glossary</b></br> The service utilizes the latest analytical
+                                    techniques and computer programming to offer an advanced lubricant analysis package
+                                    that provides a valuable lubricant monitoring tool for the ship operator.<br />
+                                    <b>Lubricant properties reported on lubricant analysis reports</b><br />
+                                    (tests conducted depend on machinery type and oil grade)<br />
+                                    <b>Viscosity</b><br />
+                                    A measure of the resistance of a liquid to flow. Commonly referred to as the 'thickness
+                                    of an oil'.<br />
+                                    <b>Flash Point</b>
+                                    <br />
+                                    Primarily a test for fuel dilution in engine oils. A decrease in flash point is
+                                    generally an indication of fuel ingress which has contaminated the lubricant.<br />
+                                    <b>Insolubles</b><br />
+                                    A test for the total solids contamination in a lubricant such as combustion soot,
+                                    dirt, oxidation products and metal wear debris.<br />
+                                    <b>Base Number</b><br />
+                                    Previously known as Total Base Number (TBN) is a measure of the reserve alkalinity
+                                    of an engine oil and its ability to neutralise harmful acids.<br />
+                                    <b>Acid Number</b><br />
+                                    Tests the acidity of the oil. Certain oils have an inherent acidity level related
+                                    to their additive chemistry. Increasing acidity may be indicative of the presence
+                                    of organic acids derived from oil oxidation.<br />
+                                    <b>Water</b><br />
+                                    The percentage (by volume) of the total amount of water contamination.<br />
+                                    <b>PQ Index</b>
+                                    <br />
+                                    Not an oil property but an index that provides a quantitative assessment, for
+                                    trending purposes, of the amount of ferrous wear debris in the sample.<br />
+                                    <b>Asphaltenes</b><br />
+                                    Give an indication of heavy fuel derived components from raw fuel ingress and/or
+                                    products of combustion from blowby.<br />
+                                    <b>ISO 4406 Cleanliness Code </b>
+                                    <br />
+                                    The code for expressing the particulate contamination level per milliliter of  fluid sample with 4, 6 and 14 micron size. Dirt ingress, filter failure and generated wear etc. results higher particulate contamination in the fluid which can cause damage to the sensitive control valves of high pressure hydraulic systems by plugging small orifices.
+                                    <br />
+                                    <b>Oxidation </b>
+                                    <br />
+                                    A chemical process in which a carbon atom gains bonds to oxygen in organic components like petroleum fluids. Oil oxidation leads into the degradation of the oil properties.
+                                    <br />
+                                    <br />
+                                    <b>
+                                        Elemental analysis with some typical sources<br />
+                                        (Elements reported depend on machinery type and oil grade and are reported in PPM, Parts Per Million)
+                                    </b><br />
+                                    Aluminium - Pistons, bearings, housings, fuel derivative<br />
+                                    Antimony - Bearings<br />
+                                    Calcium - Lubricant derivative<br />
+                                    Chromium - Piston rings<br />
+                                    Copper - Bearings, gears, oil coolers, pipework, pistonrod glands<br />
+                                    Iron - Cylinder liners, crankshafts, piston rings, gears<br />
+                                    Lead - Bearings<br />
+                                    Magnesium - Casings, housings, lubricant derivative<br />
+                                    Manganese - Cylinder liners<br />
+                                    Molybdenum - Piston rings<br />
+                                    Nickel - Bearings, valves, gears, fuel derivative<br />
+                                    Potassium - Salt Water<br />
+                                    Phosphorus - Lubricant derivative<br />
+                                    Silicon - Dust, dirt, fuel derivative, lubricant derivative<br />
+                                    Silver - Bearings<br />
+                                    Sodium - Salt water, coolant derivative, fuel derivative<br />
+                                    Tin - Bearings<br />
+                                    Vanadium - Fuel derivative<br />
+                                    Zinc - Lubricant derivative<br />
+                                    <br />
+                                    <b>
+                                        The information above is considered to be accurate as of the dates specified. We
+                                        have reviewed this information; however, no warranty or representation, express
+                                        or implied, is made as to the accuracy or completeness of the data and the information
+                                        contained in this note.
+                                    </b>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

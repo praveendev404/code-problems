@@ -1,0 +1,325 @@
+﻿
+@{
+    ViewBag.Title = "JqBasics";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<h2>JqBasics</h2>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //  document.write("Jquery");
+        //start Dropdownlist
+        $("#ddlCountrys").change(function () {
+            var country = $(this).find(":selected").text;
+            var countryId = $(this).val();
+            alert(countryId);
+        })
+        //end drodownlist
+        //Bind ddlCountrys
+        $.ajax({
+            type: "POST",
+            url: "/GetCountrys",
+            data: "{}",
+            contentType: "application/json; charset=utf-8",
+            datatype: "jsondata",
+            async: "true",
+            success: function (data) {
+                var ddlCountry = $("#ddlCountrys");
+                alert(ddlCountry);
+                //var jsData = JSON.pares(data.d);GetCountrys
+                $.each(data.d, function (key, value) {
+                    $("#ddlCountrys").append($("<option></option>").val(value.CountryId).html(value.Name))
+                });
+            },
+            error: function (result) {
+                alert("error");
+            }
+
+        })
+        //end ddlcountrys
+        //Start Bind countries from db
+        var countClicks = 0;
+        $('#btnLoadCountries').click(function () {
+            //$('#divCountries').remove();
+            countClicks++;
+            if (countClicks == 1) {
+                $.ajax({
+                    type: "POST",
+                    url: "/GetCountrys",
+                    data: "{}",
+                    contentType: "application/json; charset=utf-8",
+                    datatype: "jsondata",
+                    async: "true",
+                    success: BindCountries,
+                    error: function (result) {
+                        alert("error");
+                    }
+                })
+            }
+        })
+        var tblChkList1;
+        function BindCountries(result) {
+
+            var items = JSON.stringify(result.d);
+            var items1 = JSON.parse(items);
+            //BindCountriesCheckBoxList(items1);
+            // var dv = $('#divCountries');
+            // dv.append('<table></table>');
+            var table = $('<table id="tblChkList" class="chkClass"></table>');
+            var count = 0;
+            $.each(items1, function (i, item) {
+                var ap = "<tr>";
+                ap += "<td>";
+                ap += "<input type='checkbox' class='chkCountries' name= 'chklistitem' value=" + item.Name + "id='chklistitem'" + i + " text='" + item.Name + "' /><label >" + item.Name + "</label>";
+                ap += "</td>";
+                ap += "</tr>";
+                table.append(ap);
+            });
+            $('#divCountries').append(table);
+
+        }
+        //Start chkCountries event
+
+        $('#divCountries').on("click", ".chkCountries", function () {
+            var countrysId = "";
+            $(".chkCountries").each(function () {
+                if ($(this).is(':checked')) {
+                    countrysId += $(this).val() + "\r";
+                }
+            })
+            alert(countrysId);
+        });
+        //End Bind countries from db
+        //Start Listbox
+        $("#listBox").click(function () {
+            var countryId = "";
+            $(".selectMul").each(function () {
+                if ($(this).is(':selected')) {
+                    countryId += $(this).val() + "\r";
+                }
+            })
+            alert(countryId);
+        })
+        //End listbox
+        //start checkboxchenged event
+        //
+        $(".chkList").click(function () {
+            var countryId = '';
+            $(".chkList").each(function () {
+                if ($(this).is(':checked')) {
+                    countryId += $(this).val() + "\r";
+                }
+            })
+            alert(countryId);
+        })
+        $("#btnTotal").click(function () {
+            alert(countryId);
+        })
+        //end checkboxchenged event
+        //Start radiobuttonlist event
+        $(".games").click(function () {
+            var gameId = "";
+            $(".games").each(function () {
+                if ($(this).is(':checked')) {
+                    var name = $(this).find(':checked').text;
+                    gameId = $(this).val();
+                    alert(gameId);
+                }
+            })
+        })
+        //end radiobuttonlist event
+        $("#btnTest").click(function () {
+            var employee = {};
+            employee.Name = $("#txtName").val();
+            employee.Address = $("#txtAddress").val();
+            $.ajax({
+                type: "POST",
+                url: "/Test",
+                data: "{employee:" + JSON.stringify(employee) + "}",
+                contentType: "application/json; charset=utf-8",
+                datatype: "jsondata",
+                async: "true",
+                success: function (response) {
+                    status = response.d;
+                    if (status > 0) {
+                        alert("Data Updated successfully");
+                    }
+                    $(".errorMessage").show("slow");
+                    ClearFields();
+                }
+            })
+        })
+        $("#divShowImg").hide("slow");
+        $("#btnHide").click(function () {
+            $("#divShowImg").toggle("slow");
+        })
+        $("#btnShow").click(function () {
+            $("#divShowImg").show(1000);
+        })
+        $("#btnslideup").click(function () {
+            $("#divShowImg").show(100).delay(500).hide(100);
+        })
+        $("#btnslidedown").click(function () {
+            $("#divShowImg").SlideDown(150);
+        })
+        //
+        console.log("Clicked");
+        $("P").click(function () {
+            console.log("Clicked");
+        })
+        $("<button type='button'></button>").text("TestMe").on("click", function () {
+            // start checkboxlist
+            var countryIds = "";
+            $("[id*=chkCountrys] input:checked").each(function () {
+                countryIds += $(this).val() + "\r";
+
+            })
+            alert(countryIds);
+            //end checkboxlist
+            $("body *").filter(":animated").stop();
+        }).appendTo(document.body);
+        //Datepicker
+        $("#txtDate").datepicker({
+            dateFormat: "mm/dd/yy"
+        });
+        //Menu
+        $("#menu").menu();
+        //AddClass
+        $("#btnAddClass").click(function () {
+            $("#divAddClass").addClass("newClass", 1000, callback);
+        });
+        function callback() {
+            setTimeout(function () {
+                $("#divAddClass").removeClass("newClass");
+            }, 1500);
+        }
+        $("#txtAutocomplete").autocomplete({
+            source: function (request, response) {
+                var name = $("#txtAutocomplete").val();
+                $.ajax({
+                    type: "POST",
+                    url: "/GetCountrysBySearch",
+                    data: "{name:" + JSON.stringify(name) + "}",
+                    contentType: "application/json; charset=utf-8",
+                    datatype: "jsondata",
+                    async: "true",
+                    dataFilter: function (data) { return data; },
+                    success: function (data) {
+                        var countrys = JSON.stringify(data.d);
+                        var countrys1 = JSON.parse(countrys);
+                        response(countrys1);                    
+                    },
+                    error: function () {
+                        alert("error while search");
+                    }
+                })
+            }
+        })
+    })
+</script>
+
+<input type="button" value="Hide" id="btnHide" />
+<input type="button" value="Show" id="btnShow" />
+<input type="button" value="SlideUp" id="btnslideup" />
+<input type="button" value="SlideDown" id="btnslidedown" />
+<input type="button" id="btnTest" value="Test" />
+<div id="divShowImg">
+    <img src="../Images/j1.png" />
+</div>
+<div>
+    <table>
+        <tr>
+            <td>
+                <h3>Dropdown list change event</h3>
+                <select id="ddlCountrys">
+                    <option value="0">--Select--</option>                    
+                    <option title="India" value="1">India</option>
+                    <option title="USA" value="2">USA</option>
+                    <option title="USR" value="3">USR</option>
+                    <option title="UK" value="4">UK</option>
+                </select>
+                
+               
+                <h3>Checkbox list change event</h3>
+                <input type="checkbox" class="chkList" name="chkList" id="chk1" value="1" />1
+                <input type="checkbox" class="chkList" name="chkList" id="chk2" value="2" />2
+                <input type="checkbox" class="chkList" name="chkList" id="chk3" value="3" />3
+                <input type="checkbox" class="chkList" name="chkList" id="chk4" value="4" />4
+                <input type="checkbox" class="chkList" name="chkList" id="chk5" value="5" />5
+                <input type="checkbox" class="chkList" name="chkList" id="chk6" value="6" />6
+                <input type="button" value="Total" name="total" id="btnTotal" />
+
+                <h3>Radio button change event</h3>
+                <input type="radio" id="rdCricket" name="games" class="games" value="1" />Cricket
+                <input type="radio" id="rdHocky" name="games" class="games" value="2" />Hocky
+                <input type="radio" id="rdTennis" name="games" class="games" value="3" />Tennis
+                <input type="radio" id="rdFootBall" name="games" class="games" value="4" />FootBall
+                <input type="radio" id="rdBasketBall" name="games" class="games" value="5" />BasketBall
+                <h3>Listbox list change event</h3>
+                <select id="listBox" multiple="multiple" class="listBox">
+                    <option class="selectMul" title="India" value="1">India</option>
+                    <option class="selectMul" title="USA" value="2">USA</option>
+                    <option class="selectMul" title="USR" value="3">USR</option>
+                    <option class="selectMul" title="UK" value="4">UK</option>
+                </select>
+
+                <h3>Binding Checkboxlist from database</h3>
+                <input type="button" id="btnLoadCountries" value="Load Countries" />
+                <div id="divCountries"></div>
+                <h3>Datepicker</h3>
+                Select Date :
+                <input type="text" id="txtDate" />
+                <div>
+                    <ul id="menu" class="menu">
+                        <li class="ui-state-disabled">Aberdeen</li>
+                        <li>Ada</li>
+                        <li>Adamsville</li>
+                        <li>Addyston</li>
+                        <li>
+                            Delphi
+                            <ul>
+                                <li class="ui-state-disabled">Ada</li>
+                                <li>Saarland</li>
+                                <li>Salzburg an der schönen Donau</li>
+                            </ul>
+                        </li>
+                        <li>Saarland</li>
+                        <li>
+                            Salzburg
+                            <ul>
+                                <li>
+                                    Delphi
+                                    <ul>
+                                        <li>Ada</li>
+                                        <li>Saarland</li>
+                                        <li>Salzburg</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Delphi
+                                    <ul>
+                                        <li>Ada</li>
+                                        <li>Saarland</li>
+                                        <li>Salzburg</li>
+                                    </ul>
+                                </li>
+                                <li>Perch</li>
+                            </ul>
+                        </li>
+                        <li class="ui-state-disabled">Amesville</li>
+                    </ul>
+                </div>
+                <h3>Add class</h3>
+                <div id="divAddClass" class="diveffect">
+                    <p>
+                        abfvjhfjvfvfbv<br />
+                        bgfbgdkbgbgrbg<br />
+                        abfvjhfjvfvfb<br />
+                        bgfbgdkbgbgrbg<br />
+                    </p>
+                </div>
+                <input type="button" id="btnAddClass" value="AddClass" />
+            </td>
+        </tr>
+    </table>
+</div>

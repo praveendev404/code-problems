@@ -1,0 +1,100 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_EmployeeLayout</title>
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <link href="~/Content/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/Scripts/angular.min.js"></script>
+    @*<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />*@
+    <link href="~/Content/jquery-datatables-column-filter/media/css/themes/base/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/datatables.extensions/TableTools/css/dataTables.tableTools.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Theems/StyleSheet1.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/theme.css" rel="stylesheet" />
+ 
+    <script src="~/ZebraDialog/zebra_dialog.js"></script>
+    <script src="~/ZebraDialog/zebra_dialog.src.js"></script>
+    <link href="~/ZebraDialog/zebra_dialog.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <link href="~/Content/jquery.jqGrid/ui.jqgrid.css" rel="stylesheet" />
+    <script src="~/Scripts/i18n/grid.locale-en.js"></script>
+    @*<script src="~/Scripts/jquery-ui-1.10.4.min.js"></script>*@
+    <script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+    <script src="~/Scripts/jquery.jqGrid.min.js"></script>
+    @*<script src="~/Content/jquery-datatables-column-filter/media/js/jquery.dataTables.columnFilter.js"></script>*@
+    <link href="~/Content/themes/base/tabs.css" rel="stylesheet" />
+</head>
+<body>
+    <script src="~/ListScripts/MasterPage.js"></script>
+    <div class="dvHeader">
+        <img src="~/Images/l1.jpg" class="logo" /> MVC Demo
+    </div>
+    @*<div id="dvStatusMsg" class="dvStatusMsg">
+    </div>*@
+    @Html.ActionLink("LogOut", "Login", "Login", null, new { @class = "lnkLogOut" })
+
+    <div id="dvMenu" class="dvMenu">
+        <div id="dvAccordian" class="dvAccordian">
+            @{
+               // Html.RenderAction("_BindMenu", "Employee");
+            }
+            @*<h3>Emp List</h3>
+                <div>
+                    <a class="menuHrefs" href="~/Employee/jqEmpsList">Emp List</a>
+                </div>
+                <h3>Registration</h3>
+                <div>
+
+                    <a class="menuHrefs" href="~/Home/Test">Registration</a>
+
+                </div>
+                <h3>JqPage List</h3>
+                <div>
+                    <a class="menuHrefs" href="~/Employee/JqPageList">JqPage List</a>
+                </div>
+                <h3>JQEmp List</h3>
+                <div>
+                    <a class="menuHrefs" href="~/Employee/jqEmpList">JQEmp List</a>
+                </div>
+                <h3>Employee List</h3>
+                <div>
+                    <a class="menuHrefs" href="~/Employee/Login">Login</a><br />
+                    <a class="menuHrefs" href="~/Employee/EmpDetailsList">Employee List</a>
+                </div>*@
+        </div>
+
+        @*<ul style="list-style:none">
+                            <li class="menuItems"><a class="menuHrefs" href="~/Employee/Login">Login</a></li>
+                            <li class="menuItems"><a class="menuHrefs" href="~/Employee/EmpDetailsList">Employee List</a></li>
+                            <li class="menuItems"><a class="menuHrefs" href="~/Employee/jqEmpList">JQEmp List</a></li>
+                            <li class="menuItems"><a class="menuHrefs" href="~/Employee/JqPageList">JqPage List</a></li>
+                            <li class="menuItems"><a class="menuHrefs" href="~/Employee/jqEmpsList">Emp List</a></li>
+                            <li class="menuItems"><a class="menuHrefs" href="~/Home/Test">Registration</a></li>
+            <a href="~/Views/Shared/_MenuView.cshtml">~/Views/Shared/_MenuView.cshtml</a>
+
+                        </ul>*@
+    </div>
+    <div class="dvContainer">
+        @RenderBody()
+        @RenderSection("Scripts", required: false)
+    </div>
+    <div class="">
+    </div>
+    <div class="dvFooter">
+        Copyright@2015
+
+    </div>
+</body>
+</html>

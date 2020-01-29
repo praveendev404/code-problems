@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "DemoApi";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$("#tblEmployeeList").dataTable().fnDestroy();
+        $('#tblEmployeeList').dataTable({
+            bJQueryUI: true,
+            bServerSide: true,
+            sAjaxSource: "/api/value/GetEmployee/",
+            bProcessing: true,
+            bProcessing: false,
+            bJQueryUI: true,
+            bPaginate: true,
+            bSort: false,
+            ServerSide: true,
+            info: true,
+            paging: false,
+            searching: false,
+            retrieve: true,
+            "pagingType": "full_numbers",
+            iDisplayLength: 10,
+            bFilter: true,
+            "fnServerParams": function (aoData) {
+                alert(aoData);
+              
+                aoData.push({ "name": "myDate", "value": date });
+            },
+            "aoColumns": [
+                            {
+                                "sName": "EmployeeId",
+                                "bSearchable": false,
+                                "bSortable": false,
+                                "bVisible": false,
+                                "mData": "EmployeeId",
+                            },
+                           { "sName": "FirstName" },
+                           { "sName": "LastName" },
+                           { "sName": "GenderId" },
+                           { "sName": "CountryId" },
+                           { "sName": "StateId" },
+                           { "sName": "MobileNo" },
+                           { "sName": "EmailId" },
+                           { "sName": "ZipCode" },
+                           { "sName": "Address" },
+                           //{
+                           //    "sName": "Actions",
+                           //    "mRender": function (data, type, full) {
+                           //        return "<a href=/Employee/EditEmps?empId=" + full[0] + "><img src='../../Images/Actions/actions16px/edit.png'" +
+                           //       "style='border:0;' class='action' title='edit' " + "alt='edit' /></a> &nbsp&nbsp" +
+                           //       "<a href='#'  onclick=Test( " + full[0] + " )><img class='action' src='../../Images/Actions/actions16px/del.png'" +
+                           //       "style='border:0;' class='action' title='delete' ' + 'alt='delete' /></a>"
+
+                           //    }
+                           //},
+
+            ]
+        });
+
+        //$.ajax({
+        //    datatype: "json",
+        //    type: "Get",
+        //    url: "/api/value/GetEmployee/",
+        //    success: function (result) {
+        //        alert("ok");
+        //        alert(result);
+        //        StatusMsg("Delete", "Employee Details");
+
+
+        //    },
+        //    error: function (res) {
+        //        alert(res.responseText);
+        //    }
+        //});
+    })
+
+</script>
+<div style="color:maroon;font-size: 20px;">DatatableDemo</div>
+
+<style type="text/css">
+</style>
+<div>
+    <table id="tblEmployeeList" class="display">
+        <thead>
+            <tr>
+                <th>Emp No</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Country</th>
+                <th>State</th>
+                <th>Mobile No</th>
+                <th>Email Id</th>
+                <th>ZipCode</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+

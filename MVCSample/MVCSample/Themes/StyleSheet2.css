@@ -1,0 +1,753 @@
+﻿body {
+    margin: 0px;
+}
+
+.logo {
+    height: 40px;
+    padding-left: 109px;
+    padding-top: 17px;
+    width: 124px;
+}
+
+.divHeader {
+    background-image: url("../Images/03.png");
+    background-repeat: repeat-x;
+}
+
+.menu {
+    color: white;
+    cursor: pointer;
+    font-size: small;
+    width: 635px;
+    font-family: sans-serif;
+    font: bold;
+    font-size: 14px;
+    text-decoration: none;
+    background-image: none;
+    float: right !important;
+    margin-right: 58px;
+}
+
+    .menu ul li {
+        height: 33px;
+    }
+
+
+
+.dynamicHover {
+    background-color: silver;
+}
+
+.td1 {
+    height: 54px;
+    vertical-align: top;
+}
+
+.tdmenu {
+    float: right;
+    width: 100%;
+}
+
+.div1 {
+    margin-left: 0px;
+    padding-top: 3px;
+}
+
+.divLogout {
+    color: white;
+    float: right;
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: none;
+    margin-right: 78px;
+}
+
+.tdContentp1 {
+    color: white;
+    padding-left: 106px;
+}
+
+.tdContentp3 {
+    color: black;
+    padding-left: 108px;
+    margin-top: 30px;
+}
+
+.HeadDiv {
+    border: 1px solid lightgray;
+    min-height: 20px;
+    margin-bottom: 5px;
+    /* margin-right: 72px; */
+    width: 100%;
+    background-color: #f0f0f0;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.tdContentp2 {
+    padding-left: 108px;
+    padding-right: 147px;
+    margin-top: 15px;
+}
+
+#menuEmployee a.static {
+    border: 1px solid lightgray;
+    height: 28px;
+    padding-left: 20px;
+    padding-right: 0.15em;
+    padding-top: 5px;
+    text-decoration: none;
+    width: 122px;
+    line-height: 23px;
+}
+
+    #menuEmployee a.static:hover {
+        background: transparent url(../../Images/MasterPages/03-3.png) repeat-x;
+    }
+
+/*#menuEmployee a.popout {
+    text-decoration: none;
+    background-position: right center;
+    background-repeat: no-repeat;
+    height: 29px;
+    padding-right: 14px;
+    padding-top: 4px;
+    font-size: 15px !important;
+}*/
+
+#menuEmployee a.dynamic :hover {
+    background: transparent url(../../Images/MasterPages/03-3.png) repeat-x;
+    border-style: none;
+    background-color: silver;
+    height: 45px;
+    padding: 0 0px;
+    text-decoration: none;
+}
+
+#menuEmployee a.dynamic:hover {
+    background: url("../../Images/MasterPages/03-3.png") repeat-x;
+    border-style: none;
+    height: 33px;
+    padding: 0 0 25px;
+    text-decoration: none;
+    padding-left: 25px;
+    padding-bottom: 0px;
+}
+
+#menuEmployee ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    width: auto !important;
+}
+
+#menuEmployee a {
+    color: White;
+    display: block;
+    padding-left: 25px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+    #menuEmployee a.popout {
+        text-decoration: none;
+        /*background-position: right center;
+background-repeat: no-repeat;*/
+        background-image: none;
+        height: 29px;
+        padding-right: 14px;
+        padding-top: 4px;
+        font-size: 15px !important;
+    }
+
+a.level2 {
+    background-color: gray;
+    line-height: 34px;
+    width: 134px;
+    height: 33px;
+    text-align: left;
+}
+
+.a.level2:hover {
+    text-align: left;
+}
+
+a.level1 {
+    text-decoration: none;
+}
+
+
+.logout {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+    .logout:hover {
+        text-decoration: underline;
+    }
+
+.footer {
+    position: fixed;
+    background-image: url("../../Images/MasterPages/03-3.png");
+    background-repeat: repeat-x;
+    color: white;
+    height: 25px;
+    text-align: center;
+    font-size: large;
+    width: 100%;
+    margin-bottom: 0px;
+    bottom: 0px;
+    line-height: 31px;
+}
+
+.divDashBoard {
+    color: white;
+    float: left;
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.LoginTable {
+    background-color: #f0f0f0;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    box-shadow: 10px 10px 10px lightgray;
+    height: 230px;
+    margin-left: 468px;
+    /*margin-right: 87px;*/
+    margin-top: 64px;
+    padding-left: 0;
+    padding-top: 19px;
+    width: 407px;
+    background-image: url('../Images/im5.jpg');
+}
+
+.txtLogin {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    height: 21px;
+    width: 170px;
+    box-shadow: 0.5px 0.5px 0.5px lightgray;
+}
+
+    .txtLogin:hover {
+        box-shadow: 0.5px 0.5px 0.5px lightblue;
+        background-color: #F0F0F0;
+    }
+
+    .txtLogin::selection {
+    }
+
+.txtLoginPassword {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    height: 21px;
+    width: 170px;
+    box-shadow: 0.5px 0.5px 0.5px lightgray;
+    background-image: url('../Images/ps1.png');
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+    .txtLoginPassword:hover {
+        box-shadow: 0.5px 0.5px 0.5px lightblue;
+        background-color: #F0F0F0;
+    }
+
+.LoginButton {
+    background-color: dodgerblue;
+    border-color: dodgerblue;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 17px;
+    height: 27px;
+    width: 90px;
+}
+
+    .LoginButton:hover {
+        box-shadow: 5px 5px 5px lightblue;
+    }
+
+
+.thLogin {
+    color: blue;
+    height: 38px;
+    width: 162px;
+}
+
+.tdLogin {
+}
+
+.forgotPassword {
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+    .forgotPassword:hover {
+        text-decoration: underline;
+    }
+
+.LoginPageImage {
+    background-image: url('../Images/im1.png');
+    background-repeat: repeat-x;
+    height: 130px;
+}
+
+.LoginLogo {
+    height: 41px;
+    margin-left: 109px;
+    margin-top: 20px;
+    width: 124px;
+}
+
+.loginlogos {
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    height: 47px;
+}
+
+.tdloginHead {
+    color: white;
+    font-family: sans-serif;
+    padding-left: 106px;
+    padding-top: 37px;
+}
+
+.btnCancel {
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 0;
+    padding: 3px;
+    border: 1px solid #fff;
+}
+
+.btnSave {
+    background-color: #123404;
+    color: white;
+    border: 1px solid #fff;
+    cursor: pointer;
+    margin-bottom: 0;
+    padding: 3px;
+}
+
+
+.btnAdd {
+    float: right;
+    background-color: #507CD1;
+    color: white;
+    border: 1px solid #fff;
+    margin-bottom: 0px;
+    padding: 3px;
+    margin: 3px;
+}
+
+.headingDiv {
+    float: left;
+    margin-top: 10px;
+    text-align: left;
+    color: #0094ff;
+    padding-left: 10px;
+}
+
+.searchDiv {
+    border: 1px solid lightgray;
+    width: 100%;
+    margin-bottom: 7px;
+    font-size: 16px;
+}
+
+.holidaySearchDiv {
+    border: 1px solid lightgray;
+    min-height: 28px;
+    padding: 3px;
+    margin-left: 4px;
+}
+
+.gridDiv table th {
+    border-color: #b4cdcd;
+    height: 22px;
+    text-align: left;
+    background-color: cadetblue;
+    line-height: 15px;
+}
+
+.gridDiv table td {
+    padding-left: 10px;
+    border: 1px solid #b4cdcd;
+    height: 22px;
+}
+
+.gridDiv table table td {
+    border: 0px;
+}
+
+.gridDiv th {
+    background-image: url('../../Images/01-1.png');
+    background-repeat: repeat-x;
+    text-align: left;
+    padding-left: 11px;
+    border: 1px solid lavenderblush;
+}
+
+.imgSearch {
+    height: 17px;
+    padding-left: 2px;
+    float: right;
+}
+
+em {
+    color: red;
+}
+
+.addDivLeft {
+    float: left;
+    /*margin-top: 9px;
+    padding-top: 10px;*/
+    padding-left: 10px;
+    width: 49%;
+}
+
+.addDivRight {
+    float: right;
+    /*margin-top: 9px;
+    padding-top: 10px;*/
+    width: 49%;
+}
+
+.addDiv {
+    border: 1px solid #ccc;
+    margin-left: 1px;
+    min-height: 250px;
+    /*width: 817px;*/
+    /*margin-right: -73px;*/
+}
+
+.ddlWidth {
+    width: 156px;
+}
+
+.txtwidth {
+    width: 150px;
+}
+
+.btnSearch {
+    background-color: #b699ff;
+    color: white;
+    border: 1px solid #fff;
+    padding: 3px;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+
+.btnReset {
+    background-color: #afb455;
+    color: white;
+    border: 1px solid #fff;
+    padding: 3px;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+
+.LoginMsgDiv {
+    text-align: center;
+}
+
+.user {
+    width: 10px;
+}
+
+.userTable {
+    margin-left: 0px;
+}
+
+.userHeading {
+    width: 213px;
+    padding-left: 0px;
+    /*padding-right: 6px;
+    width: 61px;*/
+}
+
+.usertd {
+    width: 10px;
+}
+
+.tdaddemployee {
+    padding-left: 40px;
+}
+
+.divLeaveReg1 {
+    border: 1px solid lightgray;
+    margin-top: 10px;
+    padding-top: 35px;
+    height: 200px;
+}
+
+.thColon {
+    width: 12%;
+    color: gray;
+}
+
+.ddlLeaveReg {
+    width: 150px;
+    height: 26px;
+}
+
+.tdLeaveReg {
+}
+
+.txtLeaveReg {
+    width: 155px;
+    height: 18px;
+}
+
+.txtMultiLeaveReg {
+    width: 153px;
+}
+
+.trHeight {
+    height: 30px;
+}
+
+.txtleavelist {
+    width: 150px;
+}
+
+.btnCancel:hover {
+    cursor: pointer;
+}
+
+.btnAdd:hover {
+    cursor: pointer;
+}
+
+.btnReset:hover {
+    cursor: pointer;
+}
+
+.btnSave:hover {
+    cursor: pointer;
+}
+
+.btnSearch:hover {
+    cursor: pointer;
+}
+
+.txtFields {
+    width: 127px;
+}
+
+.ddlFields {
+    width: 130px;
+}
+
+.compreg {
+    width: 5%;
+}
+
+.txtComp {
+    width: 155px;
+}
+
+.tdColon {
+    width: 2px;
+}
+
+.editStatusDiv {
+    border: 1px solid lightgray;
+    height: 206px;
+}
+
+.editStatusDivLeft {
+    float: left;
+    width: 45%;
+    margin-left: 6px;
+}
+
+.editStatusDivRight {
+    float: right;
+    width: 39%;
+}
+
+.buttonsDiv {
+    clear: both;
+    text-align: center;
+}
+
+.compOffButtonDiv {
+    clear: both;
+    margin-left: 348px;
+    margin-top: 42px;
+}
+
+.addHolidayDiv {
+    border: 1px solid lightgray;
+    min-height: 150px;
+    margin-top: 10px;
+    padding-top: 10px;
+    /*padding-left: 10px;*/
+    width: 100%;
+}
+
+.btnDiv {
+    clear: both;
+    margin-left: 90px;
+    margin-top: 10px;
+}
+
+.headDivButton {
+    float: right;
+    margin-top: 8px;
+}
+
+.dvMain {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.divContent {
+    min-height: 350px;
+    overflow-y: auto;
+}
+
+.tdlbl {
+    width: 180px;
+}
+
+.tblLeaveReg2 {
+    padding-left: 289px;
+}
+
+.tblLeaveReg1 {
+    float: left;
+    margin-left: 34px;
+}
+
+.msg1Div {
+    min-width: 200px;
+    background: white;
+    top: 4px !important;
+}
+
+select {
+    width: 173px;
+}
+
+.pnlClose {
+    border: 1px none;
+    cursor: pointer;
+    float: right;
+    height: 18px;
+    margin-top: 0px;
+}
+
+.ClosePopUp {
+ float: right;
+    height: 20px;
+    margin-top: -16px;
+}
+
+.gvPopUp {
+    opacity: 0.5;
+    background-color: lightgray;
+}
+
+.divMessages {
+    background-color: white;
+    height: 42px;
+    line-height: 43px;
+    margin-left: 337px;
+    margin-top: -292px;
+    position: fixed;
+    text-align: center;
+    width: 50%;
+}
+
+.divGridPopUp {
+   background-color: white;
+    border-radius: 7px;
+    height: 363px;
+    margin-left: -30px;
+    margin-top: -16px;
+    padding-top: 3px;
+    width: 698px;
+}
+
+.gvCompOffs {
+    background-color: white;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.divgrid1 {
+  height: 282px;
+    margin-top: 41px;
+    overflow-y: auto;
+    padding-left: 37px;
+    padding-top: 0;
+    width: 622px;
+}
+
+.calender {
+    float: right;
+    padding-left: 2px;
+    Height: 20px;
+    cursor: pointer;
+}
+
+.gridEmpCompDB {
+    height: 327px;
+    overflow-y: auto;
+    /*width: 287px;*/
+}
+
+.divDEmpLvsList {
+    float: right;
+    width: 50%;
+    overflow-y: auto;
+}
+
+.divDEmpCompsList {
+    float: left;
+    width: 50%;
+}
+
+.imgCalender {
+    height: 20px;
+    padding-top: 5px;
+}
+
+.StatusApproved {
+    background-color: green;
+}
+
+.StatusRejected {
+    background-color: #FF3300;
+}
+
+.StatusPending {
+    background-color: orange;
+}
+
+.lnkBtnName {
+    color: black;
+    text-decoration: none;
+}
+
+    .lnkBtnName:hover {
+        text-decoration: underline;
+    }
+
+.divStatusColor {
+    border-radius: 5px;
+    float: left;
+    height: 14px;
+    margin-top: 5px;
+    width: 14px;
+}
+.gridDiv1{
+    overflow:auto;
+}

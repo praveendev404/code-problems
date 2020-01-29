@@ -1,0 +1,53 @@
+﻿@model MVCSample.Models.UIEmp
+
+@using (@Html.BeginForm("EmpEducation", "Home", FormMethod.Post))
+{
+    <div>
+        <div style="float:right">
+            <input type="submit" id="btnSaveEducation" class="btn btn-success" value="Save" />
+        </div>
+        <table>
+            <tr style="color: dodgerblue">
+                <td>Qualification</td>
+                <td class="tdReg">Year Of Passing</td>
+                <td class="tdReg">Aggrigate</td>
+            </tr>
+            <tr class="trReg">
+                <td>
+                    SSC
+                </td>
+                <td class="tdReg">
+                    @Html.DropDownListFor(model => model.empQualification.YearOfPassing, new SelectList(Model.lstYear as System.Collections.IEnumerable, "PassYear", "PassYear"), "--Select--")
+                </td>
+                <td class="tdReg">@Html.TextBoxFor(model => model.empQualification.Aggrigate)</td>
+            </tr>
+            <tr class="trReg">
+                <td>
+                    Intermediate
+                </td>
+                <td class="tdReg">
+                    @Html.DropDownListFor(model => model.empQualification.YearOfPassing, new SelectList(Model.lstYear as System.Collections.IEnumerable, "PassYear", "PassYear"), "--Select--")
+                </td>
+                <td class="tdReg">@Html.TextBoxFor(model => model.empQualification.Aggrigate)</td>
+            </tr>
+            <tr class="trReg">
+                <td>
+                    Graduation
+                </td>
+                <td class="tdReg">
+                    @Html.DropDownListFor(model => model.empQualification.YearOfPassing, new SelectList(Model.lstYear as System.Collections.IEnumerable, "PassYear", "PassYear"), "--Select--")
+                </td>
+                <td class="tdReg">@Html.TextBoxFor(model => model.empQualification.Aggrigate)</td>
+            </tr>
+            <tr class="trReg">
+                <td>
+                    Post Graduation
+                </td>
+                <td class="tdReg">
+                    @Html.DropDownListFor(model => model.empQualification.YearOfPassing, new SelectList(Model.lstYear as System.Collections.IEnumerable, "PassYear", "PassYear"), "--Select--")
+                </td>
+                <td class="tdReg">@Html.TextBoxFor(model => model.empQualification.Aggrigate)</td>
+            </tr>
+        </table>
+    </div>
+}

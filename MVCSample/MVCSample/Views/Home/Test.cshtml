@@ -1,0 +1,38 @@
+﻿@model MVCSample.Models.UIEmp
+
+@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<h3>Employee Details</h3>
+<div style="float:right">
+    <input type="submit" value="GotoList" class="btn btn-danger" onclick="location.href='@Url.Action("jqEmpsList", "Employee")'" />
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#tabs").tabs();
+    });
+</script>
+
+<div id="tabs" class="tabs">
+    <ul style="list-style:none;">
+        <li><a href="#Details">Details</a></li>
+        <li><a href="#Education">Education</a></li>
+        <li><a href="#TechSkills">Tech Skills</a></li>
+    </ul>
+    <div id="Details">
+        @{
+            Html.RenderPartial("_EmpPartial");
+        }
+    </div>
+    <div style="height:25px"></div>
+    <div id="Education">
+        @{
+            Html.RenderPartial("_RegisterEmpEducation");
+        }
+    </div>
+    <div id="TechSkills">
+
+    </div>
+</div>

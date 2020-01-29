@@ -1,0 +1,237 @@
+﻿<html>
+<head>
+    <style type="text/css">
+        .dvMain {
+            font-family: Tahoma;
+            width: 100%;
+            left: 0px !important;
+            font-size: 14px;
+            <!-- min-height: 842px; -->
+        }
+
+        .dvBorderPdf {
+            /*border-top: 1px solid black;*/
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        .dvLeft {
+            padding-left: 10px;
+            width: 50%;
+        }
+
+        .trHead {
+            background-color: #003366;
+            /* border-color: blue; */
+            height: 32px;
+            color: #fff;
+        }
+
+        .thHead {
+            width: 33%;
+            border-right: 1px solid black;
+            padding: 10px 0px;
+        }
+
+        .tdLabel {
+            width: 25%;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .thHeads {
+            width: 19%;
+            border-right: 1px solid black;
+            padding: 9px 0px;
+            color: #fff;
+        }
+
+        .tdHead {
+            background-color: #003366;
+            color: #fff;
+            text-align: center;
+            line-height: 2;
+            border: 1px solid black;
+            font-weight: bold;
+        }
+
+        .tdValue {
+            text-align: center;
+        }
+
+        .vericaltext {
+            width: 1px;
+            word-wrap: break-word;
+            font-weight: bold;
+        }
+
+        table {
+            border-spacing: 0px;
+            border-collapse: collapse;
+        }
+
+        .headSpan {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dvMain" style="margin-left:0 !important;">
+        <div class="dvBorderPdf" style="height:200px; border-top:1px solid black;width:100%;">
+            <div style="float:left;width:49%;height:100%;">
+                <img style="margin-left:15px;" src="$LogoImage$" alt="LOGO" />
+                <div style="clear:both;"></div>
+                <span class="headSpan">Tribotool GmbH </span><br />
+                <span class="headSpan">Kornkamp 32</span><br />
+                <span class="headSpan">D-22926 Ahrensburg</span><br />
+                <span class="headSpan">T: +49 (0) 4102 607569-0 / -1</span><br />
+                <span class="headSpan">Country : Germany</span>
+            </div>
+            <div style="float:right;width:49%;border-left: 1px solid black;height:100%;">
+
+                <h2 style="text-align:center;margin:15px;">CERTIFICATE OF ANALYSIS</h2>
+
+                <table width="100%" style="text-align: center;" border="0" cellpadding="0" cellspacing="0">
+                    <tr class="trHead">
+                        <th class="thHead">Customer PO No.</th>
+                        <th class="thHead">Ship Date</th>
+                        <th class="thHead">Page</th>
+                    </tr>
+                    <tr>
+                        <td style="line-height:35px;font-size:14px;">$TriboTool.CustomerPoNo$</td>
+                        <td style="line-height:35px;font-size:14px;">$TriboTool.ShipDate;format="dd-MM-yy"$</td>
+                        <td style="line-height:35px;font-size:14px;">$Page$</td>
+                    </tr>
+                    <tr class="trHead">
+                        <th class="thHead">Delivery No.</th>
+                        <th class="thHead" colspan="2">Order No.</th>
+                    </tr>
+                    <tr>
+                        <td style="line-height:35px;font-size:14px;">$TriboTool.DeliveryNo$</td>
+                        <td style="line-height:35px;font-size:14px;" colspan="2">$TriboTool.OrderNo$</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="dvBorderPdf" style="height:200px">
+            <div class="dvLeft" style="float:left; height:100%;width:48%;">
+                <table width="100%">
+                    <tr>
+                        <td class="tdLabel">Material: </td>
+                        <td>:</td>
+                        <td style="font-size:14px;">$TriboTool.Material$</td>
+                    </tr>
+                    <tr>
+                        <td class="tdLabel">Inspection Lot</td>
+                        <td>:</td>
+                        <td style="font-size:14px;">$TriboTool.InspectionLot$</td>
+                    </tr>
+                    <tr>
+                        <td class="tdLabel">Quantity</td>
+                        <td>:</td>
+                        <td style="font-size:14px;">$TriboTool.Quantity$</td>
+                    </tr>
+                </table>
+            </div>
+            <div style="float:right;width:49.2%;">
+                <div style="float:left;background-color: #003366;width: 8%;color: #fff;height: 100%;font-size: 14px;padding-left: 10px;padding-bottom:55px;text-align:center;">
+                    <p class="vericaltext">
+                        RECIPIENT
+                    </p>
+                </div>
+                <!-- <div style="float:right;width:90%;padding-top:10px;padding-left:5px;"> -->
+                <div style="float:right;width:90%;">
+                    <span style="font-size:14px;">
+                        $TriboTool.Recipient$
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <!--   <div class="dvBorderPdf" style="height:40px;width:100%;">
+              <div  style="float:left;border-right: 1px solid black;width:50%;padding-top:10px;font-size:14px;">
+                  <b>Trans Equipment ID</b>
+                  <span style="font-size:14px;">$TriboTool.TransEquipmentId$</span>
+              </div>
+              <div style="float:right;width:50%;padding-top:10px;font-size:14px;">
+                  <b>Comp./Seal No.</b>  <span style="font-size:14px;margin-left:15px;">$TriboTool.CompSealNo$</span>
+              </div>
+          </div> -->
+
+        <div class="dvBorderPdf" style="height:40px;width:100%;">
+            <div style="float:left;border-right: 1px solid black; height:75%;padding-top:10px;width:50.8%;">
+                <b>Trans Equipment ID</b> $TriboTool.TransEquipmentId$
+            </div>
+            <div style="float:right;width:45%;padding-top:10px">
+                <b>Comp./Seal No.</b> $TriboTool.CompSealNo$
+            </div>
+        </div>
+        <div class="dvBorderPdf" style="height:200px; ">
+            <div class="dvLeft" style="float:left; height:100%;padding-left: 0px;">
+                <div style="float:left;background-color: #003366;width: 8%;text-align:center;color: #fff;height: 100%;font-size: 17px;padding-left: 10px;">
+                    <p class="vericaltext">
+                        SOLD TO
+                    </p>
+                </div>
+                <div style="float:right;width:90%;">
+                    <span style="font-size:14px;">
+                        $TriboTool.SoldTo$
+                    </span>
+                </div>
+            </div>
+            <div style="float:right;width:49.2%;height:100%;">
+                <div style="float:left;background-color: #003366;width: 8%;text-align:center;color: #fff;height: 100%;font-size: 17px;padding-left: 10px;">
+                    <p class="vericaltext">
+                        SHIP TO
+                    </p>
+                </div>
+                <div style="float:right;width:90%;">
+                    <span style="font-size:14px;">
+                        $TriboTool.ShipTo$
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+            <div class="dvBorderPdf" style="height:750px;border-bottom: 1px solid black">
+                <div style="height:41px;background-color: #003366;">
+                    <div style="float:left;width:49%"></div>
+                    <div style="    float: right;width: 49%;color: #fff;height: 40px;text-align: center; font-size: 22px;line-height: 33px;">Product Specifications</div>
+                </div>
+                <table width="100%" style="border:1px solid black !important; ">
+                    <tr bgcolor="#003366" style=" color: #fff;height: 40px;">
+                        <th class="thHeads" style=" width:57.2">Characteristics</th>
+                        <th class="thHeads"></th>
+                        <th class="thHeads">Minimum</th>
+                        <th class="thHeads">Typical</th>
+                        <th class="thHeads">Maximum</th>
+                        <th class="thHeads">Result</th>
+                    </tr>
+                    $TriboTool.LstTribotoolLubCharResults :{ tbTool |
+                    <tr>
+                        <td style="font-size:14px;">$tbTool.LubCharName$</td>
+                        <td class="tdValue">$tbTool.Units$</td>
+                        <td class="tdValue">$tbTool.Minimum$</td>
+                        <td class="tdValue">$tbTool.Typical$</td>
+                        <td class="tdValue">$tbTool.Maximum$</td>
+                        <td class="tdValue">$tbTool.Result$</td>
+                    </tr>
+                    }$
+                </table>
+
+            </div>
+        </div>
+        <footer>
+            <div class="dvBorderPdf" style="height:40px;padding:5px;bottom:0px">
+                We guarantee that the above analytical results are in conformity with the agreed upon specifications.<br />
+                <b style="font-size:10px;">Approved by:</b> <span style="font-size:10px;">Quality Assurance</span>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

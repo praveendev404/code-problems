@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+@{
+    if(ViewBag.status!=null)
+    {
+        <h3>@ViewBag.status</h3>
+    }
+}
+
+<h2>Login</h2>
+<form method="post" action="~/Employee/Validate">
+    <div>
+        <table>
+            <tr>
+                Login Here
+            </tr>
+            <tr>
+                <td>UserName</td>
+                <td>
+                    <input type="text" name="txtUserName" id="txtUserName" />
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" id="txtPassword" name="txtPassword" />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Login" id="btnLogin" name="btnLogin" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+

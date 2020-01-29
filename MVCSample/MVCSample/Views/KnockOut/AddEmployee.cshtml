@@ -1,0 +1,137 @@
+﻿@{
+    ViewBag.Title = "AddEmployee";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<h2>AddEmployee</h2>
+
+<div class="col-lg-12" data-bind="with:EmployeeDetails" id="dvEmployeeDetails">
+    <div>
+        @*<table>
+                <tr>
+                    <td>Date</td><td><input data-bind="value:Day" /></td>
+                </tr>
+                <tr>
+                    <td>Month</td>
+                    <td><input data-bind="value:Month" /></td>
+                </tr>
+                <tr>
+                    <td>Year</td>
+                    <td><input data-bind="value:Year" /></td>
+                </tr>
+                <tr>
+                    <td>Fulldate</td>
+                    <td><input data-bind="value:Fulldate" /></td>
+                </tr>
+            </table>*@
+        <p>Day: <input data-bind="value: EmployeeDetails.day" /></p>
+        <p>Month: <input data-bind="value: EmployeeDetails.month" /></p>
+        <p>Year: <input data-bind="value: EmployeeDetails.year" /></p>
+        <p>The current date is <span data-bind="text: EmployeeDetails.fullDate"></span></p>
+
+        <input id="btnSave" type="button" data-bind="click:Save" style="float: right; margin-right: 3px; margin-top: 1px" value="Save" class="btn btn-success btn-sm" />
+        <input id="btnEdit" type="button" data-bind="click:Edit" style="float: right; margin-right: 3px; margin-top: 1px" value="Edit" class="btn btn-success btn-sm" />
+    </div>
+    <div>
+
+    </div>
+
+</div>
+@*<div class="col-lg-12" data-bind="with:EmployeeDetails" id="dvEmployeeDetailsReBind">
+    <div>     
+        <p>Day: <input data-bind="value: EmployeeDetails.day" /></p>
+        <p>Month: <input data-bind="value: EmployeeDetails.month" /></p>
+        <p>Year: <input data-bind="value: EmployeeDetails.year" /></p>
+        <p>The current date is <span data-bind="text: EmployeeDetails.fullDate"></span></p>
+
+        <input id="btnSave" type="button" data-bind="click:Save" style="float: right; margin-right: 3px; margin-top: 1px" value="Save" class="btn btn-success btn-sm" />
+        <input id="btnEdit" type="button" data-bind="click:Edit" style="float: right; margin-right: 3px; margin-top: 1px" value="Edit" class="btn btn-success btn-sm" />
+    </div>
+    <div>
+
+    </div>
+
+</div>*@
+<script type="text/javascript">
+
+
+    var EmployeeDetails = (function () {
+
+        var self = this;
+        self.EmployeeDetails = {};
+        self.day = ko.observable();
+        self.month = ko.observable();
+        self.year = ko.observable();
+
+        self.fullDate = ko.computed(function () {
+            //alert(self.day() + "/" + self.month() + "/" + self.year());
+            return self.day() + "/" + self.month() + "/" + self.year();
+        });
+        debugger
+        self.Edit = function Save() {
+            // alert("edit");
+            $.ajax({
+                url: '/KnockOut/EditEmpById?id=1',//'@Url.Action("EditEmpById", "KnockOut")',
+                cache: false,
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                // data: ko.toJSON(EmployeeDetails),
+                success: function (data) {
+                    debugger
+                    //var dateMonthYear = {
+                    //    Day: self.day,
+                    //    Month: self.month,
+                    //    Year: self.year
+
+                    //};
+                    //  alert(data.Day);
+                    self.EmployeeDetails.day = data.Day;
+                    self.EmployeeDetails.month = data.Month;
+                    self.EmployeeDetails.year = data.Year;
+                  //  ko.editable(EmployeeDetails);
+                    ko.applyBindings(EmployeeDetails, document.getElementById("dvEmployeeDetails"));
+                   // ko.applyBindings(EmployeeDetails, document.getElementById("dvEmployeeDetailsReBind"));
+                    //self.day("");
+                    //self.month("");
+                    //self.year("");
+
+                }
+            }).fail(
+           function (xhr, textStatus, err) {
+               alert(err);
+           });
+        }
+        self.Save = function Save() {
+            //var dateMonthYear = {
+                //Day: self.day,
+                //Month: self.month,
+                //Year: self.year
+
+          //  };
+            $.ajax({
+                url: '@Url.Action("AddEmp", "KnockOut")',
+                cache: false,
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                data: ko.toJSON(EmployeeDetails),
+                success: function (data) {
+                    debugger
+                    self.day("");
+                    self.month("");
+                    self.year("");
+
+                }
+            }).fail(
+            function (xhr, textStatus, err) {
+                alert(err);
+            });
+        }
+
+    })
+    $(document).ready(function () {
+        debugger
+        alert("load");
+        ko.applyBindings(EmployeeDetails, document.getElementById("dvEmployeeDetails"));
+    })
+
+</script>
