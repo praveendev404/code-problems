@@ -12,7 +12,7 @@ namespace CodeProblems
  123454321
 			 */
 
-		public static void Main()
+		public static void Main1()
 		{
 			int i, j, k, l, n;
 			Console.Write("Enter the Range=");

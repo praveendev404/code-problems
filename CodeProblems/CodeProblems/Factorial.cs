@@ -18,7 +18,7 @@ namespace CodeProblems
   Factorial of 6 is: 720
                */
 
-		public static void Main()
+		public static void Main1()
 		{
 			int i, fact = 1, number;
 			Console.Write("Enter any Number: ");

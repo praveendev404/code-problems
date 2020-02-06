@@ -40,7 +40,7 @@ Let's see the C# example to convert decimal to binary.
 Binary of the given number= 1010
 		 */
 
-		public static void Main()
+		public static void Main1()
 		{
 			int n, i;
 			int[] a = new int[10];

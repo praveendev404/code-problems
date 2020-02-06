@@ -16,7 +16,7 @@ Enter the Number= 357546
 three five seven five four six
              */
 
-		public static void Main()
+		public static void Main1()
 		{
 			int n, sum = 0, r;
 			Console.Write("Enter the Number= ");

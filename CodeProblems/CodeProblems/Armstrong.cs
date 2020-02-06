@@ -2,7 +2,7 @@
 
 namespace CodeProblems
 {
-	internal class Armstrong
+	class Armstrong
 	{
 		/*	Before going to write the C# program to check whether the number is Armstrong or not, let's understand what is Armstrong number.
 
@@ -25,7 +25,7 @@ namespace CodeProblems
 	Not Armstrong Number.
 		*/
 
-		public static void Main()
+		public static void Main1()
 		{
 			int n, r, sum = 0, temp;
 			Console.Write("Enter the Number= ");

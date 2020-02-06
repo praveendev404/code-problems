@@ -16,7 +16,7 @@ Let's see the C# example to print alphabet triangle.
  ABCDEDCBA
 			 */
 
-		public static void Main()
+		public static void Main1()
 		{
 			char ch = 'A';
 			int i, j, k, m;

@@ -14,7 +14,7 @@ namespace CodeProblems
     Number is not Prime.
         */
 
-		public static void Main()
+		public static void Main1()
 		{
 			int n, i, m = 0, flag = 0;
 			Console.Write("Enter the Number to check Prime: ");

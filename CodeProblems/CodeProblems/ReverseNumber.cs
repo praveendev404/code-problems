@@ -13,7 +13,7 @@ Reversed Number: 432
 
 		*/
 
-		public static void Main()
+		public static void Main1()
 		{
 			int n, reverse = 0, rem;
 			Console.Write("Enter a number: ");

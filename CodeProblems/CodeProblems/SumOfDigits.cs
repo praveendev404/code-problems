@@ -21,7 +21,7 @@ Enter a number: 23
 Sum is= 5
 		 */
 
-		public static void Main()
+		public static void Main1()
 		{
 			int n, sum = 0, m;
 			Console.Write("Enter a number: ");

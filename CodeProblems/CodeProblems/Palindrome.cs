@@ -18,7 +18,7 @@ namespace CodeProblems
 	Number is not Palindrome.
 	*/
 
-		public static void Main()
+		public static void Main1()
 		{
 			int n, r, sum = 0, temp;
 			Console.Write("Enter the Number: ");

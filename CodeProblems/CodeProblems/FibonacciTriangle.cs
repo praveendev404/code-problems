@@ -17,7 +17,7 @@ namespace CodeProblems
 1	1	2	3	5	8	13	21	34
              */
 
-		public static void Main()
+		public static void Main1()
 		{
 			int a = 0, b = 1, i, c, n, j;
 			Console.Write("Enter the limit: ");
