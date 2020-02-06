@@ -4,3 +4,5 @@
 
 /CodeProblems/CodeProblems/obj
 /CodeProblems/CodeProblems/bin
+**/bin
+**/obj
