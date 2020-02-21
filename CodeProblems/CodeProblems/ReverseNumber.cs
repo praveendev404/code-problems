@@ -21,7 +21,7 @@ Reversed Number: 432
 			while (n != 0)
 			{
 				rem = n % 10;
-				reverse = reverse * 10 + rem;
+				reverse = (reverse * 10) + rem;
 				n /= 10;
 			}
 			Console.Write("Reversed Number: " + reverse);

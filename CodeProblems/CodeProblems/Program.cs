@@ -13,12 +13,12 @@ namespace CodeProblems
 			//Console.WriteLine("Hello World!");
 			//StringDuplicates.DuplicatesInString();
 			//FibonacciSeries.Main1();
-			PrimeNumber.Main1();
+			//PrimeNumber.Main1();
 			//Palindrome.Main1();
 			//Factorial.Main1();
 			//Armstrong.Main1();
 			//SumOfDigits.Main1();
-			//ReverseNumber.Main1();
+			ReverseNumber.Main1();
 			//SwapWithoutThird.UsingStartSlash();
 			//SwapWithoutThird.UsingPlusMinus();
 			//DecimalToBinary.Main1();
@@ -26,6 +26,8 @@ namespace CodeProblems
 			//PrintAlphabetTriangle.Main1();
 			//PrintNumberTriangle.Main1();
 			//FibonacciTriangle.Main1();
+
+			//CodeChallenges.CodeChallenge();
 		}
 	}
 }

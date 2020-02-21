@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeProblems", "CodeProblems\CodeProblems.csproj", "{08D912B7-BC87-45FF-A0C0-84FD846DFD7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeProblems", "CodeProblems\CodeProblems.csproj", "{08D912B7-BC87-45FF-A0C0-84FD846DFD7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrickyQuestions", "TrickyQuestions\TrickyQuestions.csproj", "{DCCB0ED0-3977-467A-AAB6-862FB573CF0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{08D912B7-BC87-45FF-A0C0-84FD846DFD7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08D912B7-BC87-45FF-A0C0-84FD846DFD7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08D912B7-BC87-45FF-A0C0-84FD846DFD7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCCB0ED0-3977-467A-AAB6-862FB573CF0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCCB0ED0-3977-467A-AAB6-862FB573CF0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCCB0ED0-3977-467A-AAB6-862FB573CF0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCCB0ED0-3977-467A-AAB6-862FB573CF0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
